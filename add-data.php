@@ -93,10 +93,6 @@
             <td>Nama Terdakwa</td>
             <td><input type='text' name='nama_dakwa' class='form-control' required></td>
         </tr>
-        <tr>
-            <td>Alamat</td>
-            <td><input type='text' name='alamat' class='form-control' required></td>
-        </tr>
 				<tr>
             <td>Alamat</td>
             <td><input type='text' name='alamat' class='form-control' required></td>
@@ -123,9 +119,53 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir' id="example1" class='form-control' required></td>
+						<td><input type="text" name='tgl_lahir' class='form-control' required></td>
         </tr>
         <tr>
+				<tr>
+	          <td>No KTP</td>
+	          <td><input type='text' name='no_ktp' class='form-control' required></td>
+	      </tr>
+				<tr>
+						<td>SIM Gol</td>
+						<td><input type='text' name='sim_gol' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>No DD</td>
+						<td><input type='text' name='no_dd' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Jenis Kendaraan</td>
+						<td><input type='text' name='jns_kendaraan' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Tanggal Tilang</td>
+						<td><input type='text' name='tgl_tilang' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Jam Tilang</td>
+						<td><input type='text' name='jam_tilang' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Jalan</td>
+						<td><input type='text' name='jalan' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Wilayah</td>
+						<td><input type='text' name='wilayah' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Surat Sita</td>
+						<td><input type='text' name='surat_sita' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Pengambil Surat</td>
+						<td><input type='text' name='ambil_sitaan' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Pasal Dilanggar</td>
+						<td><input type='text' name='pasal_dilanggar' class='form-control' required></td>
+				</tr>
             <td colspan="2">
             		<button type="submit" class="btn btn-primary" name="btn-save">
     							<span class="glyphicon glyphicon-plus"></span> Create New Record

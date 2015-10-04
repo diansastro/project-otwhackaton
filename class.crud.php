@@ -52,10 +52,10 @@
 						}
 			}
 
-		public function getID($id)
+		public function getID($no_tilang)
 			{
 					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
-					$stmt->execute(array(":no_tilang"=>$id));
+					$stmt->execute(array(":id"=>$no_tilang));
 					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 					return $editRow;
 			}
@@ -106,9 +106,9 @@
 							}
 			}
 
-			public function delete($id){
+			public function delete($no_tilang){
 					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:no_tilang");
-					$stmt->bindparam(":no_tilang",$id);
+					$stmt->bindparam(":id",$no_tilang);
 					$stmt->execute();
 			return true;
 			}
@@ -219,7 +219,5 @@
 			?></ul><?php
 		}
 	}
-
 	/* paging */
-
 }
