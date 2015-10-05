@@ -11,6 +11,11 @@
 							format: "dd/mm/yyyy"
 						});
 					});
+				$(document).ready(function () {
+						$('#example2').datepicker({
+							format: "dd/mm/yyyy"
+							});
+						});
 		</script>
 
 <?php
@@ -87,7 +92,7 @@
         </tr>
         <tr>
             <td>Kesatuan</td>
-            <td><input type='text' name='Kesatuan' class='form-control' required></td>
+            <td><input type='text' name='kesatuan' class='form-control' required></td>
         </tr>
         <tr>
             <td>Nama Terdakwa</td>
@@ -119,7 +124,7 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir' class='form-control' required></td>
+						<td><input type="text" name='tgl_lahir'  id = 'example1' class='form-control' required></td>
         </tr>
         <tr>
 				<tr>
@@ -140,7 +145,7 @@
 				</tr>
 				<tr>
 						<td>Tanggal Tilang</td>
-						<td><input type='text' name='tgl_tilang' class='form-control' required></td>
+						<td><input type='text' name='tgl_tilang' id = 'example2' class='form-control' required></td>
 				</tr>
 				<tr>
 						<td>Jam Tilang</td>

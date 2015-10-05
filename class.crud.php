@@ -52,13 +52,13 @@
 						}
 			}
 
-		public function getID($no_tilang)
-			{
-					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
-					$stmt->execute(array(":id"=>$no_tilang));
-					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
-					return $editRow;
-			}
+		//public function getID($no_tilang)
+		//	{
+		//			$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
+		//			$stmt->execute(array(":id"=>$no_tilang));
+		//			$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+		//			return $editRow;
+		//	}
 
 			public function update($no_tilang,$kesatuan,$nama_dakwa,$alamat,$no_hp,$pekerjaan,
 														$pendidikan,$umur,$t_lahir,$tgl_lahir,$no_ktp,$sim_gol,$no_dd,$jns_kendaraan,

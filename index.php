@@ -8,9 +8,10 @@
 			</div>
 			<div class="clearfix"></div><br />
 				<div class="container">
-	 				<table class='table table-bordered table-responsive'>
-     				<tr>
-			        <th>No Tilang</th>
+	 				<table class='table table-bordered'>
+						<thead>
+						<tr text-align:'justify';>
+			        <th>No Tilang</th> <!-- cetak tebal-->
 			        <th>Kesatuan</th>
 			        <th>Nama Terdakwa</th>
 			        <th>Alamat</th>
@@ -31,8 +32,9 @@
 							<th>Surat Sita</th>
 							<th>Pengambil Surat</th>
 							<th>Pasal Dilanggar</th>
-     					<th colspan="10" align="center">Actions</th>
+     					<th colspan="3" align="center">Actions</th>
      			</tr>
+					</thead>
 					<?php
 							$query = "SELECT * FROM datatilang";
 							$records_per_page=3;
@@ -49,4 +51,4 @@
     		</tr>
 			</table>
 		</div>
-<?php include_once 'footer.php'; ?>
+<!--?php include_once 'footer.php'; ?>
