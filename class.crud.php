@@ -7,41 +7,39 @@
 				$this->db = $DB_con;
 			}
 
-		public function create($no_tilang,$kesatuan,$nama_dakwa,$alamat,$no_hp,$pekerjaan,
-													$pendidikan,$umur,$t_lahir,$tgl_lahir,$no_ktp,$sim_gol,$no_dd,$jns_kendaraan,
-													$tgl_tilang,$jam_tilang,$jalan,$wilayah,$surat_sita,$ambil_sitaan,$pasal_dilanggar)
+		public function create($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
+													$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+													$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
 				{
 						try
 						{
 							$stmt = $this->db->prepare("INSERT INTO datatilang(no_tilang,kesatuan,nama_dakwa,alamat,
 																no_hp,pekerjaan,pendidikan,umur,t_lahir,tgl_lahir,no_ktp,sim_gol,
 																no_dd,jns_kendaraan,tgl_tilang,jam_tilang,jalan,wilayah,surat_sita,
-																ambil_sitaan,pasal_dilanggar)
-																VALUES(:no_tilang, :kesatuan, :nama_dakwa, :alamat,
-																			 :no_hp, :pekerjaan, :pendidikan, :umur, :t_lahir, :tgl_lahir,
-																			 :no_ktp, :sim_gol, :no_dd, :jns_kendaraan, :tgl_tilang, :jam_tilang,
-																			 :jalan, :wilayah, :surat_sita, :ambil_sitaan, :pasal_dilanggar)");
-						 $stmt->bindparam(":no_tilang",$no_tilang);
-						 $stmt->bindparam(":kesatuan",$kesatuan);
-						 $stmt->bindparam(":nama_dakwa",$nama_dakwa);
-						 $stmt->bindparam(":alamat",$alamat);
-						 $stmt->bindparam(":no_hp",$no_hp);
-						 $stmt->bindparam(":pekerjaan",$pekerjaan);
-						 $stmt->bindparam(":pendidikan",$pendidikan);
+																ambil_sitaan,pasal_dilanggar) VALUES(:notil, :kes, :ndakwa, :almt,
+																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr,:nktp, :simgol, :nodd,
+																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar)");
+						 $stmt->bindparam(":notil",$notil);
+						 $stmt->bindparam(":kes",$kes);
+						 $stmt->bindparam(":ndakwa",$ndakwa);
+						 $stmt->bindparam(":almt",$almt);
+						 $stmt->bindparam(":nhp",$nhp);
+						 $stmt->bindparam(":pkrj",$pkrj);
+						 $stmt->bindparam(":pddkn",$pddkn);
 						 $stmt->bindparam(":umur",$umur);
-						 $stmt->bindparam(":t_lahir",$t_lahir);
-						 $stmt->bindparam(":tgl_lahir",$tgl_lahir);
-						 $stmt->bindparam(":no_ktp",$no_ktp);
-						 $stmt->bindparam(":sim_gol",$sim_gol);
-						 $stmt->bindparam(":no_dd",$no_dd);
-						 $stmt->bindparam(":jns_kendaraan",$jns_kendaraan);
-						 $stmt->bindparam(":tgl_tilang",$tgl_tilang);
-						 $stmt->bindparam(":jam_tilang",$jam_tilang);
-						 $stmt->bindparam(":jalan",$jalan);
-						 $stmt->bindparam(":wilayah",$wilayah);
-						 $stmt->bindparam(":surat_sita",$surat_sita);
-						 $stmt->bindparam(":ambil_sitaan",$ambil_sitaan);
-						 $stmt->bindparam(":pasal_dilanggar",$pasal_dilanggar);
+						 $stmt->bindparam(":tlhir",$tlhir);
+						 $stmt->bindparam(":tglhr",$tglhr);
+						 $stmt->bindparam(":nktp",$nktp);
+						 $stmt->bindparam(":simgol",$simgol);
+						 $stmt->bindparam(":nodd",$nodd);
+						 $stmt->bindparam(":jnskendara",$jnskendara);
+						 $stmt->bindparam(":tgltilang",$tgltilang);
+						 $stmt->bindparam(":jmtlg",$jmtlg);
+						 $stmt->bindparam(":jln",$jln);
+						 $stmt->bindparam(":wil",$wil);
+						 $stmt->bindparam(":ssita",$ssita);
+						 $stmt->bindparam(":ambsita",$ambsita);
+						 $stmt->bindparam(":psllanggar",$psllanggar);
 						 $stmt->execute();
 						 return true;
 					 }
@@ -52,50 +50,50 @@
 						}
 			}
 
-		//public function getID($no_tilang)
-		//	{
-		//			$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
-		//			$stmt->execute(array(":id"=>$no_tilang));
-		//			$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
-		//			return $editRow;
-		//	}
+			public function getID($id)
+				{
+					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
+					$stmt->execute(array(":id"=>$id));
+					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
+					return $editRow;
+				}
 
-			public function update($no_tilang,$kesatuan,$nama_dakwa,$alamat,$no_hp,$pekerjaan,
-														$pendidikan,$umur,$t_lahir,$tgl_lahir,$no_ktp,$sim_gol,$no_dd,$jns_kendaraan,
-														$tgl_tilang,$jam_tilang,$jalan,$wilayah,$surat_sita,$ambil_sitaan,$pasal_dilanggar)
+			public function update($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
+														$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+														$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
 				{
 					try
 					{
-						$stmt=$this->db->prepare("UPDATE datatilang SET no_tilang=:no_tilang, kesatuan=:kesatuan, nama_dakwa=:nama_dakwa,
-																														alamat=:alamat, no_hp=:no_hp, pekerjaan=:pekerjaan,
-																														pendidikan=:pendidikan, umur=:umur, t_lahir=:t_lahir,
-																														tgl_lahir=:tgl_lahir, no_ktp=:no_ktp, sim_gol=:sim_gol,
-																														no_dd=:no_dd, jns_kendaraan=:jns_kendaraan, tgl_tilang=:tgl_tilang,
-																														jam_tilang=:jam_tilang, jalan=:jalan, wilayah=:wilayah, surat_sita=:surat_sita,
-																														ambil_sitaan=:ambil_sitaan, pasal_dilanggar=:pasal_dilanggar
+						$stmt=$this->db->prepare("UPDATE datatilang SET no_tilang=:notil, kesatuan=:kes, nama_dakwa=:ndakwa,
+																														alamat=:almt, no_hp=:nhp, pekerjaan=:pkrj,
+																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhir,
+																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
+																														no_dd=:no_dd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
+																														jam_tilang=:jmtlng, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar
 																			WHERE id=:no_tilang");
-						$stmt->bindparam(":no_tilang",$no_tilang);
-						$stmt->bindparam(":kesatuan",$kesatuan);
-						$stmt->bindparam(":nama_dakwa",$nama_dakwa);
-						$stmt->bindparam(":alamat",$alamat);
-						$stmt->bindparam(":no_hp",$no_hp);
-						$stmt->bindparam(":pekerjaan",$pekerjaan);
-						$stmt->bindparam(":pendidikan",$pendidikan);
+						$stmt->bindparam(":notil",$notil);
+						$stmt->bindparam(":kes",$kes);
+						$stmt->bindparam(":ndakwa",$ndakwa);
+						$stmt->bindparam(":almt",$almt);
+						$stmt->bindparam(":nhp",$nhp);
+						$stmt->bindparam(":pkrj",$pkrj);
+						$stmt->bindparam(":pddkn",$pddkn);
 						$stmt->bindparam(":umur",$umur);
-						$stmt->bindparam(":t_lahir",$t_lahir);
-						$stmt->bindparam(":tgl_lahir",$tgl_lahir);
-						$stmt->bindparam(":no_ktp",$no_ktp);
-						$stmt->bindparam(":sim_gol",$sim_gol);
-						$stmt->bindparam(":no_dd",$no_dd);
-						$stmt->bindparam(":jns_kendaraan",$jns_kendaraan);
-						$stmt->bindparam(":tgl_tilang",$tgl_tilang);
-						$stmt->bindparam(":jam_tilang",$jam_tilang);
-						$stmt->bindparam(":jalan",$jalan);
-						$stmt->bindparam(":wilayah",$wilayah);
-						$stmt->bindparam(":surat_sita",$surat_sita);
-						$stmt->bindparam(":ambil_sitaan",$ambil_sitaan);
-						$stmt->bindparam(":pasal_dilanggar",$pasal_dilanggar);
-						$stmt->execute();
+						$stmt->bindparam(":tlhir",$tlhir);
+						$stmt->bindparam(":tglhr",$tglhr);
+						$stmt->bindparam(":nktp",$nktp);
+						$stmt->bindparam(":simgol",$simgol);
+					  $stmt->bindparam(":nodd",$nodd);
+						$stmt->bindparam(":jnskendara",$jnskendara);
+						$stmt->bindparam(":tgltilang",$tgltilang);
+						$stmt->bindparam(":jmtlg",$jmtlg);
+						$stmt->bindparam(":jln",$jln);
+						$stmt->bindparam(":wil",$wil);
+			    	$stmt->bindparam(":ssita",$ssita);
+						$stmt->bindparam(":ambsita",$ambsita);
+						$stmt->bindparam(":psllanggar",$psllanggar);
+					  $stmt->execute();
 						return true;
 
 					}
@@ -106,9 +104,9 @@
 							}
 			}
 
-			public function delete($no_tilang){
+			public function delete($id){
 					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:no_tilang");
-					$stmt->bindparam(":id",$no_tilang);
+					$stmt->bindparam(":id",$id);
 					$stmt->execute();
 			return true;
 			}
