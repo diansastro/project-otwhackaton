@@ -52,8 +52,8 @@
 
 			public function getID($id)
 				{
-					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
-					$stmt->execute(array(":id"=>$id));
+					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:notil");
+					$stmt->execute(array(":notil"=>$id));
 					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 					return $editRow;
 				}
@@ -71,7 +71,7 @@
 																														no_dd=:no_dd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlng, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
 																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar
-																			WHERE id=:no_tilang");
+																			WHERE id=:notil");
 						$stmt->bindparam(":notil",$notil);
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
@@ -105,7 +105,7 @@
 			}
 
 			public function delete($id){
-					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:no_tilang");
+					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:notil");
 					$stmt->bindparam(":id",$id);
 					$stmt->execute();
 			return true;

@@ -69,8 +69,8 @@ if(isset($_POST['btn-del']))
 					 <th>Pasal Dilanggar</th>
          </tr>
          <?php
-         $stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:no_tilang");
-         $stmt->execute(array(":no_tilang"=>$_GET['delete_id']));
+         $stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:notil");
+         $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
