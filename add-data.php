@@ -22,7 +22,6 @@
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-save']))
 	{
-		$notil 			 = $_POST['no_tilang'];
 		$kes	 			 = $_POST['kesatuan'];
 		$ndakwa 		 = $_POST['nama_dakwa'];
 		$almt				 = $_POST['alamat'];
@@ -44,9 +43,9 @@
 		$ambsita	 	 = $_POST['ambil_sitaan'];
 		$psllanggar  = $_POST['pasal_dilanggar'];
 
-			if($crud->create($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
-											$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-											$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar))
+			if($crud->create($kes,$ndakwa,$almt,$nhp,$pkrj,
+											$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
 				{
 					header("Location: add-data.php?inserted");
 				}
@@ -86,10 +85,7 @@
 <div class="container">
 	 <form method='post'>
     <table class='table table-bordered'>
-        <tr>
-            <td>No Tilang</td>
-            <td><input type='text' name='no_tilang' class='form-control' required></td>
-        </tr>
+        
         <tr>
             <td>Kesatuan</td>
             <td><input type='text' name='kesatuan' class='form-control' required></td>

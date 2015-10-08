@@ -7,19 +7,19 @@
 				$this->db = $DB_con;
 			}
 
-		public function create($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
+		public function create($kes,$ndakwa,$almt,$nhp,$pkrj,
 													$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-													$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
+													$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
 				{
 						try
 						{
-							$stmt = $this->db->prepare("INSERT INTO datatilang(no_tilang,kesatuan,nama_dakwa,alamat,
+							$stmt = $this->db->prepare("INSERT INTO datatilang(kesatuan,nama_dakwa,alamat,
 																no_hp,pekerjaan,pendidikan,umur,t_lahir,tgl_lahir,no_ktp,sim_gol,
 																no_dd,jns_kendaraan,tgl_tilang,jam_tilang,jalan,wilayah,surat_sita,
-																ambil_sitaan,pasal_dilanggar) VALUES(:notil, :kes, :ndakwa, :almt,
+																ambil_sitaan,pasal_dilanggar) VALUES(:kes, :ndakwa, :almt,
 																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr,:nktp, :simgol, :nodd,
 																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar)");
-						 $stmt->bindparam(":notil",$notil);
+
 						 $stmt->bindparam(":kes",$kes);
 						 $stmt->bindparam(":ndakwa",$ndakwa);
 						 $stmt->bindparam(":almt",$almt);
@@ -51,28 +51,27 @@
 			}
 
 			public function getID($id)
-				{
-					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:notil");
-					$stmt->execute(array(":notil"=>$id));
+					{
+					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:id");
+					$stmt->execute(array(":id"=>$id));
 					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 					return $editRow;
 				}
 
-			public function update($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
-														$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-														$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
+			public function update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
+														$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+														$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
 				{
 					try
 					{
-						$stmt=$this->db->prepare("UPDATE datatilang SET no_tilang=:notil, kesatuan=:kes, nama_dakwa=:ndakwa,
+						$stmt=$this->db->prepare("UPDATE datatilang SET id=:id, kesatuan=:kes, nama_dakwa=:ndakwa,
 																														alamat=:almt, no_hp=:nhp, pekerjaan=:pkrj,
-																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhir,
+																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhr,
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
 																														no_dd=:no_dd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
-																														jam_tilang=:jmtlng, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
+																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
 																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar
-																			WHERE id=:notil");
-						$stmt->bindparam(":notil",$notil);
+																			WHERE id=:id");
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
 						$stmt->bindparam(":almt",$almt);
@@ -80,7 +79,7 @@
 						$stmt->bindparam(":pkrj",$pkrj);
 						$stmt->bindparam(":pddkn",$pddkn);
 						$stmt->bindparam(":umur",$umur);
-						$stmt->bindparam(":tlhir",$tlhir);
+						$stmt->bindparam(":tlhir",$tlhr);
 						$stmt->bindparam(":tglhr",$tglhr);
 						$stmt->bindparam(":nktp",$nktp);
 						$stmt->bindparam(":simgol",$simgol);
@@ -93,6 +92,7 @@
 			    	$stmt->bindparam(":ssita",$ssita);
 						$stmt->bindparam(":ambsita",$ambsita);
 						$stmt->bindparam(":psllanggar",$psllanggar);
+						$stmt->bindparam(":id",$id);
 					  $stmt->execute();
 						return true;
 
@@ -105,7 +105,7 @@
 			}
 
 			public function delete($id){
-					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:notil");
+					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:id");
 					$stmt->bindparam(":id",$id);
 					$stmt->execute();
 			return true;
@@ -123,7 +123,7 @@
 						{
 							?>
                 <tr>
-                <td><?php print($row['no_tilang']); ?></td>
+                <td><?php print($row['id']); ?></td>
                 <td><?php print($row['kesatuan']); ?></td>
                 <td><?php print($row['nama_dakwa']); ?></td>
                 <td><?php print($row['alamat']); ?></td>
@@ -145,10 +145,10 @@
 								<td><?php print($row['ambil_sitaan']); ?></td>
 								<td><?php print($row['pasal_dilanggar']); ?></td>
                 <td align="center">
-                	<a href="edit-data.php?edit_id=<?php print($row['no_tilang']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
                 </td>
                 <td align="center">
-                	<a href="delete.php?delete_id=<?php print($row['no_tilang']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
                 </td>
             		</tr>
           			<?php

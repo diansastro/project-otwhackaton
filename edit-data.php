@@ -1,32 +1,51 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
+	</head>
+	<body>
+		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+		<script type="text/javascript">
+				$(document).ready(function () {
+						$('#example1').datepicker({
+							format: "dd/mm/yyyy"
+						});
+					});
+				$(document).ready(function () {
+						$('#example2').datepicker({
+							format: "dd/mm/yyyy"
+							});
+						});
+		</script>
 <?php
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-update']))
 		{
-				$no_tilang			 = $_GET ['edit_id'];
-				$kesatuan 			 = $_POST['kesatuan'];
-				$nama_dakwa 		 = $_POST['nama_dakwa'];
-				$alamat 				 = $_POST['alamat'];
-				$no_hp 					 = $_POST['no_hp'];
-				$pekerjaan 			 = $_POST['pekerjaan'];
-				$pendidikan 		 = $_POST['pendidikan'];
+				$id       			 = $_GET ['edit_id'];
+				$kes			 			 = $_POST['kesatuan'];
+				$ndakwa 				 = $_POST['nama_dakwa'];
+				$almt		 				 = $_POST['alamat'];
+				$nhp 					 	 = $_POST['no_hp'];
+				$pkrj 			 	 	 = $_POST['pekerjaan'];
+				$pddkn 		 			 = $_POST['pendidikan'];
 				$umur 					 = $_POST['umur'];
-				$t_lahir 				 = $_POST['t_lahir'];
-				$tgl_lahir 			 = $_POST['tgl_lahir'];
-				$no_ktp          = $_POST['no_ktp'];
-				$sim_gol				 = $_POST['sim_gol'];
-				$no_dd 					 = $_POST['no_dd'];
-				$jns_kendaraan 	 = $_POST['jns_kendaraan'];
-				$tgl_tilang 		 = $_POST['tgl_tilang'];
-				$jam_tilang 		 = $_POST['jam_tilang'];
-				$jalan 					 = $_POST['jalan'];
-				$wilayah 				 = $_POST['wilayah'];
-				$surat_sita 		 = $_POST['surat_sita'];
-				$ambil_sitaan 	 = $_POST['ambil_sitaan'];
-				$pasal_dilanggar = $_POST['pasal_dilanggar'];
+				$tlhr 				 	 = $_POST['t_lahir'];
+				$tglhr 			 		 = $_POST['tgl_lahir'];
+				$nktp          	 = $_POST['no_ktp'];
+				$simgol				 	 = $_POST['sim_gol'];
+				$nodd 					 = $_POST['no_dd'];
+				$jnskendara 	 	 = $_POST['jns_kendaraan'];
+				$tgltilang 		 	 = $_POST['tgl_tilang'];
+				$jmtlg 		 	 		 = $_POST['jam_tilang'];
+				$jln 					 	 = $_POST['jalan'];
+				$wil 				 		 = $_POST['wilayah'];
+				$ssita 		 			 = $_POST['surat_sita'];
+				$ambsita 	 	 		 = $_POST['ambil_sitaan'];
+				$psllanggar 		 = $_POST['pasal_dilanggar'];
 
-				if($crud->update($no_tilang,$kesatuan,$nama_dakwa,$alamat,$no_hp,$pekerjaan,
-												 $pendidikan,$umur,$t_lahir,$tgl_lahir,$no_ktp,$sim_gol,$no_dd,$jns_kendaraan,
-												 $tgl_tilang,$jam_tilang,$jalan,$wilayah,$surat_sita,$ambil_sitaan,$pasal_dilanggar))
+				if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
+												 $pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+												 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
 					{
 						$msg = "<div class='alert alert-info'>
 										<strong>WOW!</strong> Record was updated successfully <a href='index.php'>HOME</a>!
@@ -42,8 +61,8 @@
 
 	if(isset($_GET['edit_id']))
 		{
-			$no_tilang = $_GET['edit_id'];
-			extract($crud->getID($no_tilang));
+			$id = $_GET['edit_id'];
+			extract($crud->getID($id));
 		}
 
 ?>
@@ -62,10 +81,7 @@
 	<div class="container">
      <form method='post'>
      		<table class='table table-bordered'>
-        	<tr>
-            	<td>No Tilang</td>
-            	<td><input type='text' name='no_tilang' class='form-control' value="<?php echo $no_tilang; ?>" required></td>
-        	</tr>
+
         	<tr>
             	<td>Kesatuan</td>
             	<td><input type='text' name='kesatuan' class='form-control' value="<?php echo $kesatuan; ?>" required></td>
@@ -120,7 +136,7 @@
 					</tr>
 					<tr>
 							<td>Tanggal Tilang</td>
-							<td><input type='text' name='tgl_tilang' class='form-control' value="<?php echo $tgl_tilang; ?>" required></td>
+							<td><input type='text' name='tgl_tilang' class='form-control' id="example2" value="<?php echo $tgl_tilang; ?>" required></td>
 					</tr>
 					<tr>
 							<td>Jam Tilang</td>
@@ -157,3 +173,5 @@
 		</form>
 	</div>
 <?php include_once 'footer.php'; ?>
+</body>
+</html>

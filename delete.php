@@ -69,13 +69,13 @@ if(isset($_POST['btn-del']))
 					 <th>Pasal Dilanggar</th>
          </tr>
          <?php
-         $stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:notil");
+         $stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:id");
          $stmt->execute(array(":id"=>$_GET['delete_id']));
          while($row=$stmt->fetch(PDO::FETCH_BOTH))
          {
              ?>
              <tr>
-             <td><?php print($row['no_tilang']); ?></td>
+             <td><?php print($row['id']); ?></td>
              <td><?php print($row['kesatuan']); ?></td>
              <td><?php print($row['nama_dakwa']); ?></td>
              <td><?php print($row['alamat']); ?></td>

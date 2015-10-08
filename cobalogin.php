@@ -1,10 +1,10 @@
 <?php
 define('HOST','localhost');
 define('USER','root');
-define('PASS','root');
+define('PASS','');
 define('DB','cmsprodi');
  
-$con = mysqli_connect('localhost','root','root','cmsprodi');
+$con = mysqli_connect('localhost','root','','cmsprodi');
  
 $username = $_POST['user'];
 $password = $_POST['pass'];
