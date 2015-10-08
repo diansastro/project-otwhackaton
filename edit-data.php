@@ -80,7 +80,7 @@
 	<div class="clearfix"></div><br />
 	<div class="container">
      <form method='post'>
-     		<table class='table table-bordered'>
+     		<table class='table table-bordered table-responsive'>
 
         	<tr>
             	<td>Kesatuan</td>
@@ -116,7 +116,7 @@
 					</tr>
 					<tr>
 							<td>Tanggal Lahir</td>
-							<td><input type="text" name='tgl_lahir' id="example1" class='form-control' value="<?php echo $tgl_lahir; ?>" required></td>
+							<td><input type="text" name='tgl_lahir' id='example1' class='form-control' value="<?php echo $tgl_lahir; ?>" required></td>
 					</tr>
 					<tr>
 							<td>No KTP</td>
@@ -136,7 +136,7 @@
 					</tr>
 					<tr>
 							<td>Tanggal Tilang</td>
-							<td><input type='text' name='tgl_tilang' class='form-control' id="example2" value="<?php echo $tgl_tilang; ?>" required></td>
+							<td><input type='text' name='tgl_tilang' class='form-control' id='example2' value="<?php echo $tgl_tilang; ?>" required></td>
 					</tr>
 					<tr>
 							<td>Jam Tilang</td>

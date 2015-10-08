@@ -145,10 +145,10 @@
 								<td><?php print($row['ambil_sitaan']); ?></td>
 								<td><?php print($row['pasal_dilanggar']); ?></td>
                 <td align="center">
-                	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+                	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-edit">Edit</i></a>
                 </td>
                 <td align="center">
-                	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="glyphicon glyphicon-remove-circle">Hapus</i></a>
                 </td>
             		</tr>
           			<?php

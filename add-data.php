@@ -7,12 +7,12 @@
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
 		<script type="text/javascript">
 				$(document).ready(function () {
-						$('#example1').datepicker({
+						$('#example3').datepicker({
 							format: "dd/mm/yyyy"
 						});
 					});
 				$(document).ready(function () {
-						$('#example2').datepicker({
+						$('#example4').datepicker({
 							format: "dd/mm/yyyy"
 							});
 						});
@@ -85,7 +85,7 @@
 <div class="container">
 	 <form method='post'>
     <table class='table table-bordered'>
-        
+
         <tr>
             <td>Kesatuan</td>
             <td><input type='text' name='kesatuan' class='form-control' required></td>
@@ -120,7 +120,7 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir'  id = 'example1' class='form-control' required></td>
+						<td><input type="text" name='tgl_lahir'  id = 'example3' class='form-control' required></td>
         </tr>
         <tr>
 				<tr>
@@ -141,7 +141,7 @@
 				</tr>
 				<tr>
 						<td>Tanggal Tilang</td>
-						<td><input type='text' name='tgl_tilang' id = 'example2' class='form-control' required></td>
+						<td><input type='text' name='tgl_tilang' id = 'example4' class='form-control' required></td>
 				</tr>
 				<tr>
 						<td>Jam Tilang</td>
