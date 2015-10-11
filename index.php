@@ -8,7 +8,7 @@
 			</div>
 			<div class="clearfix"></div><br />
 				<div class="container">
-	 				<table class='table table-bordered table-responsive'>
+	 				<table class='table table-bordered table-responsive' text-align:"justify">
 						<tr>
 			        <th>No Tilang</th> <!-- cetak tebal-->
 			        <th>Kesatuan</th>

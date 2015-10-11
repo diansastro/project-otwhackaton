@@ -1,10 +1,10 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
-	</head>
-	<body>
 		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+	</head>
+	<body>
 		<script type="text/javascript">
 				$(document).ready(function () {
 						$('#example3').datepicker({
@@ -120,7 +120,7 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir'  id = 'example3' class='form-control' required></td>
+						<td><input type="text" name='tgl_lahir'  id ='example3' class='form-control' required></td>
         </tr>
         <tr>
 				<tr>

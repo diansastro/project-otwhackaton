@@ -7,9 +7,8 @@
 				$this->db = $DB_con;
 			}
 
-		public function create($kes,$ndakwa,$almt,$nhp,$pkrj,
-													$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-													$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
+		public function create($kes,$ndakwa,$almt,$nhp,$pkrj,$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
 				{
 						try
 						{
@@ -17,7 +16,7 @@
 																no_hp,pekerjaan,pendidikan,umur,t_lahir,tgl_lahir,no_ktp,sim_gol,
 																no_dd,jns_kendaraan,tgl_tilang,jam_tilang,jalan,wilayah,surat_sita,
 																ambil_sitaan,pasal_dilanggar) VALUES(:kes, :ndakwa, :almt,
-																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr,:nktp, :simgol, :nodd,
+																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr, :nktp, :simgol, :nodd,
 																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar)");
 
 						 $stmt->bindparam(":kes",$kes);
@@ -64,14 +63,13 @@
 				{
 					try
 					{
-						$stmt=$this->db->prepare("UPDATE datatilang SET id=:id, kesatuan=:kes, nama_dakwa=:ndakwa,
+						$stmt=$this->db->prepare("UPDATE datatilang SET kesatuan=:kes, nama_dakwa=:ndakwa,
 																														alamat=:almt, no_hp=:nhp, pekerjaan=:pkrj,
 																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhr,
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
 																														no_dd=:no_dd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar
-																			WHERE id=:id");
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar WHERE id=:id");
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
 						$stmt->bindparam(":almt",$almt);
@@ -169,9 +167,11 @@
 				$starting_position=0;
 				if(isset($_GET["page_no"]))
 					{
-						$starting_position=($_GET["page_no"]-1)*$records_per_page;
+						$starting_position=($_GET["page_no"]-1)*
+						$records_per_page;
 					}
-						$query2=$query." limit $starting_position,$records_per_page";
+						$query2=$query." limit $starting_position,
+						$records_per_page";
 						return $query2;
 			}
 			public function paginglink($query,$records_per_page)

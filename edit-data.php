@@ -1,10 +1,11 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
-	</head>
-	<body>
 		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+	</head>
+	<body>
+
 		<script type="text/javascript">
 				$(document).ready(function () {
 						$('#example1').datepicker({
