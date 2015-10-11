@@ -5,7 +5,6 @@
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
 	</head>
 	<body>
-
 		<script type="text/javascript">
 				$(document).ready(function () {
 						$('#example1').datepicker({
@@ -44,64 +43,64 @@
 				$ambsita 	 	 		 = $_POST['ambil_sitaan'];
 				$psllanggar 		 = $_POST['pasal_dilanggar'];
 
-				if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
-												 $pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-												 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
-					{
-						$msg = "<div class='alert alert-info'>
-										<strong>WOW!</strong> Record was updated successfully <a href='index.php'>HOME</a>!
-										</div>";
-					}
-					else
-						{
-							$msg = "<div class='alert alert-warning'>
-											<strong>SORRY!</strong> ERROR while updating record !
-											</div>";
-						}
+					if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
+												 	$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+												 	$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
+							{
+									$msg = "<div class='alert alert-info'>
+													<strong>Selamat</strong> Data berhasil diupdate <a href='index.php'>HOME</a>!
+													</div>";
+							}
+							else
+								{
+										$msg = "<div class='alert alert-warning'>
+													<strong>Maaf!</strong> Gagal mengupdate data!
+													</div>";
+								}
 		}
-
-	if(isset($_GET['edit_id']))
-		{
-			$id = $_GET['edit_id'];
-			extract($crud->getID($id));
-		}
-
-?>
-<?php include_once 'header.php'; ?>
-	<div class="clearfix"></div>
-	<div class="container">
-
-		<?php
-			if(isset($msg))
+			if(isset($_GET['edit_id']))
 				{
-					echo $msg;
+						$id = $_GET['edit_id'];
+						extract($crud->getID($id));
 				}
-		?>
-	</div>
-	<div class="clearfix"></div><br />
-	<div class="container">
-     <form method='post'>
-     		<table class='table table-bordered table-responsive'>
-
-        	<tr>
-            	<td>Kesatuan</td>
-            	<td><input type='text' name='kesatuan' class='form-control' value="<?php echo $kesatuan; ?>" required></td>
-        	</tr>
-					<tr>
-							<td>Nama Terdakwa</td>
-							<td><input type='text' name='nama_dakwa' class='form-control' value="<?php echo $nama_dakwa; ?>" required></td>
-					</tr>
-					<tr>
-							<td>Alamat</td>
-							<td><input type='text' name='alamat' class='form-control' value="<?php echo $alamat; ?>" required></td>
-					</tr>
+	?>
+	<?php include_once 'header.php'; ?>
+			<div class="clearfix"></div>
+			<div class="container">
+				<?php
+					if(isset($msg))
+						{
+							echo $msg;
+						}?>
+			</div>
+			<div class="clearfix"></div><br />
+			<div class="container">
+     	<form method='post'>
+     			<table class='table'>
+        		<tr>
+            		<td>Kesatuan</td>
+            		<td><input type='text' name='kesatuan' class='form-control' value="<?php echo $kesatuan; ?>" required></td>
+        		</tr>
+						<tr>
+								<td>Nama Terdakwa</td>
+								<td><input type='text' name='nama_dakwa' class='form-control' value="<?php echo $nama_dakwa; ?>" required></td>
+						</tr>
+						<tr>
+								<td>Alamat</td>
+								<td><input type='text' name='alamat' class='form-control' value="<?php echo $alamat; ?>" required></td>
+						</tr>
 					<tr>
 							<td>No Hp</td>
 							<td><input type='text' name='no_hp' class='form-control' value="<?php echo $no_hp; ?>" required></td>
 					</tr>
 					<tr>
 							<td>Pekerjaan</td>
-							<td><input type='text' name='pekerjaan' class='form-control' value="<?php echo $pekerjaan; ?>" required></td>
+							<td><input type='text' name='pekerjaan' class='form-control' value="<?php echo $pekerjaan; ?>" required>
+									<!--input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Petani
+									<input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Pedagang
+									<input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Wiraswasta
+									<input type='radio' value="<1?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> PNS-->
+							</td>
 					</tr>
 					<tr>
 							<td>Pendidikan</td>
@@ -165,9 +164,9 @@
 					</tr>
             	<td colspan="2">
                 <button type="submit" class="btn btn-primary" name="btn-update">
-    								<span class="glyphicon glyphicon-edit"></span>  Update this Record
+    								<span class="glyphicon glyphicon-edit"></span>  Update Data
 								</button>
-                <a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; CANCEL</a>
+                <a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; BATAL</a>
             	</td>
         	</tr>
     	</table>

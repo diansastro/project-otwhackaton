@@ -12,7 +12,6 @@
                 <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
               <![endif]-->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <script src="https://code.jquery.com/jquery.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       </head>
       <body>

@@ -84,7 +84,7 @@
 <div class="clearfix"></div><br />
 <div class="container">
 	 <form method='post'>
-    <table class='table table-bordered'>
+    <table class='table table-bordered table-responsive'>
 
         <tr>
             <td>Kesatuan</td>
@@ -104,11 +104,24 @@
         </tr>
 				<tr>
             <td>Pekerjaan</td>
-            <td><input type='text' name='pekerjaan' class='form-control' required></td>
+            <td><input type='radio' value="Petani" name='pekerjaan' id="pekerjaan"/>Petani
+								<input type='radio' value="Pedagang" name='pekerjaan' id="pekerjaan"/>Pedagang
+								<input type='radio' value="Wiraswasta" name='pekerjaan' id="pekerjaan" />Wiraswasta
+								<input type='radio' value="PNS" name='pekerjaan' id="pekerjaan" />PNS
+						</td>
         </tr>
 				<tr>
             <td>Pendidikan</td>
-            <td><input type='text' name='pendidikan' class='form-control' required></td>
+            <td><select class="form-control" name="pendidikan">
+										<option>SD</option>
+										<option>SMP</option>
+										<option>SMA</option>
+										<option>D3</option>
+										<option>S1</option>
+										<option>S2</option>
+										<option>S3</option>
+								</select>
+ 						</td>
         </tr>
 				<tr>
             <td>Umur</td>
@@ -129,7 +142,14 @@
 	      </tr>
 				<tr>
 						<td>SIM Gol</td>
-						<td><input type='text' name='sim_gol' class='form-control' required></td>
+						<td><select class="form-control" name="sim_gol">
+										<option>A</option>
+										<option>A Khusus</option>
+										<option>B1</option>
+										<option>B2</option>
+										<option>C</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>No DD</td>
@@ -137,7 +157,14 @@
 				</tr>
 				<tr>
 						<td>Jenis Kendaraan</td>
-						<td><input type='text' name='jns_kendaraan' class='form-control' required></td>
+						<td><select class="form-control" name="jns_kendaraan">
+										<option>Roda Dua</option>
+										<option>Roda Empat</option>
+										<option>Roda Enam</option>
+										<option>#</option>
+										<option>#</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Tanggal Tilang</td>
@@ -157,11 +184,21 @@
 				</tr>
 				<tr>
 						<td>Surat Sita</td>
-						<td><input type='text' name='surat_sita' class='form-control' required></td>
+						<td><select class="form-control" name="surat_sita">
+										<option>SIM</option>
+										<option>STNK</option>
+										<option>KTP</option>
+										<option>Lain-Lain</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Pengambil Surat</td>
-						<td><input type='text' name='ambil_sitaan' class='form-control' required></td>
+						<td><select class="form-control" name="ambil_sitaan">
+										<option>Diwakilkan</option>
+										<option>Sendiri</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Pasal Dilanggar</td>
