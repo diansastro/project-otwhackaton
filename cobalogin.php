@@ -2,12 +2,12 @@
 define('HOST','localhost');
 define('USER','root');
 define('PASS','');
-define('DB','cmsprodi');
+define('DB','tilangonline');
  
-$con = mysqli_connect('localhost','root','','cmsprodi');
+$con = mysqli_connect('localhost','root','','tilangonline');
  
-$username = $_POST['user'];
-$password = $_POST['pass'];
+$username = $_POST['user_id'];
+$password = $_POST['password'];
  
 $sql = "select * from admin where user_id='$username' and password='$password'";
  

@@ -21,7 +21,7 @@
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-update']))
 		{
-				$id       			 = $_GET ['edit_id'];
+				$id       			 = $_GET['edit_id'];
 				$kes			 			 = $_POST['kesatuan'];
 				$ndakwa 				 = $_POST['nama_dakwa'];
 				$almt		 				 = $_POST['alamat'];
@@ -48,7 +48,7 @@
 												 	$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
 							{
 									$msg = "<div class='alert alert-info'>
-													<strong>Selamat</strong> Data berhasil diupdate <a href='index.php'>HOME</a>!
+													<strong>Selamat</strong> Data berhasil diupdate <a href='index.php'><strong>HOME</strong></a>!
 													</div>";
 							}
 							else
@@ -63,7 +63,7 @@
 						$id = $_GET['edit_id'];
 						extract($crud->getID($id));
 				}
-	?>
+?>
 	<?php include_once 'header.php'; ?>
 			<div class="clearfix"></div>
 			<div class="container">

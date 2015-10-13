@@ -69,7 +69,7 @@
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
 																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar WHERE id=:id");
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
 						$stmt->bindparam(":almt",$almt);

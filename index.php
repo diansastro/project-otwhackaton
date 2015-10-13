@@ -6,11 +6,12 @@
 			<div class="container">
 					<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tmabah Data</a>
 			</div>
-				<div class="clearfix"></div><br>
-				<div class="table-responsive">
+				<div class="clearfix"></div><br></br>
+				<div class="container">
+					<div class="table-responsive">
 	 				<table class='table'>
-						<thead>
-						<tr>
+						<thead class="table-responsive">
+						<tr class="table-bordered">
 			        <th>No</th> <!-- cetak tebal-->
 			        <th>Kesatuan</th>
 			        <th>Terdakwa</th>
@@ -32,7 +33,7 @@
 							<th>Disita</th>
 							<th>Sidang</th>
 							<th>Pelanggaran</th>
-     					<th colspan="5" align="center">Actions</th>
+     					<th colspan="3" align="center">Actions</th>
      			</tr>
 				</thead>
 					<?php
@@ -51,4 +52,6 @@
     		</tr>
 			</table>
 		</div>
-<!--?php include_once 'footer.php'; ?>
+		</div>
+		<br></br>
+<?php include_once 'footer.php'; ?>
