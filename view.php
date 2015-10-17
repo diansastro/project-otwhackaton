@@ -1,18 +1,11 @@
-<html>
-<head>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link rel="stylesheet" href="bootstrap/css/site.min.css">
-		<script type="text/javascript" src="bootstrap/js/site.min.js"></script>
-	</head>
 <?php include_once 'dbconfig.php'; ?>
-<?php include_once 'index_menu.php'; ?>
+<?php include_once 'header.php'; ?>
+<br></br>
 		<div class="clearfix"></div>
 			<div class="container">
-					<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tmabah Data</a>
+					<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah Data</a>
 			</div>
-				<div class="clearfix"></div><br></br>
+			<div class="clearfix"></div><br></br>
 				<div class="container">
 					<div class="table-responsive">
 	 				<table class='table'>
@@ -60,5 +53,4 @@
 		</div>
 		</div>
 		<br></br>
-<?php include_once 'footer.php'; ?>
-</html>
+		<?php include('footer.php');  ?>

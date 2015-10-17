@@ -1,9 +1,8 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="bootstrap/css/site.min.css">
-		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
-		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+			<link rel="stylesheet" href="bootstrap/css/datepicker.css">
+			<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+			<script src="bootstrap/js/bootstrap-datepicker.js"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -57,8 +56,8 @@
 		}
 ?>
 
-<?php include_once 'index_menu.php'; ?>
-		<div class="clearfix"></div>
+<?php include_once 'header.php'; ?>
+		<!--div class="clearfix"></div-->
 <?php
 	if(isset($_GET['inserted']))
 		{
@@ -222,7 +221,6 @@
     </table>
 	</form>
 </div>
-
-<?php include_once 'footer.php'; ?>
-</body>
+<?php include ('footer.php')?>
+</body>>
 </html>

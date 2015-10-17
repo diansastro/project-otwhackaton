@@ -1,13 +1,14 @@
 <?php
-include_once 'dbconfig.php';
+	include_once 'dbconfig.php';
 	if(isset($_POST['btn-del']))
 		{
 			$id = $_GET['delete_id'];
 			$crud->delete($id);
 			header("Location: delete.php?deleted");
 		}
-	?>
-	<?php include_once 'index_menu.php'; ?>
+?>
+	<?php include_once 'header.php'; ?>
+		<br></br>
 		<div class="clearfix"></div>
 		<div class="container">
 			<?php
@@ -24,19 +25,20 @@ include_once 'dbconfig.php';
 						?>
         			<div class="alert alert-danger">
     						<strong>Apakah anda yakin !!</strong> menghapus data ini ?
-								</div>
+							</div>
         		<?php
 					}
 					?>
 		</div>
-
 		<div class="clearfix"></div>
 		<div class="container">
-
 	 	<?php
 	 		if(isset($_GET['delete_id']))
 	 			{
 		 				?>
+
+							<div class="container">
+							<div class="table-responsive">
          			<table class='table'>
          				<tr>
 					 				<th>No Tilang</th> <!-- cetak tebal-->
@@ -97,7 +99,10 @@ include_once 'dbconfig.php';
         		<?php
 	 			}
 	 		?>
+		</div>
 	</div>
+	</div>
+
 	<div class="container">
 		<p>
 				<?php
@@ -120,4 +125,5 @@ include_once 'dbconfig.php';
 							?>
 		</p>
 	</div>
-<?php include_once 'footer.php'; ?>
+<br></br>
+<?php include ('footer.php'); ?>

@@ -1,34 +1,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-  <html xmlns="http://www.w3.org/1999/xhtml">
+  <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
-        <title>Tilang Online</title>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    		<title>Tilang Online</title>
+    		<meta charset="utf-8">
+    		<link rel="stylesheet" href="bootstrap/css/site.min.css">
+    		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
+    		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    		<!--[if lt IE 9]>
+    		  <script src="js/html5shiv.js"></script>
+    		  <script src="js/respond.min.js"></script>
+    		<![endif]-->
+    		<script type="text/javascript" src="bootstrap/js/site.min.js"></script>
+    </head>
+    <body style="background-color: #f1f2f6;">
+    		<div class="docs-header">
+    			<!--nav-->
+    			<nav class="navbar navbar-default navbar-custom" role="navigation">
+    				<div class="container">
+    					<div class="navbar-header">
+    						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    							<span class="sr-only">Toggle navigation</span>
+    							<span class="icon-bar"></span>
+    							<span class="icon-bar"></span>
+    							<span class="icon-bar"></span>
+    						</button>
+    							<a class="navbar-brand" href="index.php"><img src='images/logo.png' height="40"/></a>
+    					</div>
+    					<div class="collapse navbar-collapse">
+    						<ul class="nav navbar-nav navbar-right">
+    								<li><a class="nav-link current" href="#">Home</a></li>
+    								<li><a class="nav-link" href="#">About</a></li>
+    								<li><a class="nav-link" href="#">Login</a></li>
+    						</ul>
+    					</div>
+    				</div>
+    			</nav>
+    		</div>
+  </body>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-              <!--[if lt IE 9]>
-                <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-                <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-              <![endif]-->
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
-
-      </head>
-      <body>
-      <style type="text/css">
-          body { background:  !important; }
-      </style>
-          <div class="navbar navbar-default navbar-static-top" role="navigation">
-              <!--div class="container">
-                  <div class="navbar-header">
-                      <a class="navbar-brand" href="#" title='Programming Blog'>Menu 1</a>
-                      <a class="navbar-brand" href="#">Menu 2</a>
-                      <a class="navbar-brand" href="#">Menu 3</a>
-                      <a class="navbar-brand" href="#">Menu 4</a>
-                  </div>
-              </div-->
-          </div>
-    </body>
-<html>
+</html>
