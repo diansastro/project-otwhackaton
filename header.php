@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <title>Tilang Online</title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
               <!--[if lt IE 9]>
@@ -14,15 +14,21 @@
               <![endif]-->
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <!-- Include all compiled plugins (below), or include individual files as needed -->
+
       </head>
       <body>
+      <style type="text/css">
+          body { background:  !important; }
+      </style>
           <div class="navbar navbar-default navbar-static-top" role="navigation">
-              <div class="container">
+              <!--div class="container">
                   <div class="navbar-header">
                       <a class="navbar-brand" href="#" title='Programming Blog'>Menu 1</a>
                       <a class="navbar-brand" href="#">Menu 2</a>
                       <a class="navbar-brand" href="#">Menu 3</a>
                       <a class="navbar-brand" href="#">Menu 4</a>
                   </div>
-              </div>
+              </div-->
           </div>
+    </body>
+<html>

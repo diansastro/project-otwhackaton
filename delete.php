@@ -7,7 +7,7 @@ include_once 'dbconfig.php';
 			header("Location: delete.php?deleted");
 		}
 	?>
-	<?php include_once 'header.php'; ?>
+	<?php include_once 'index_menu.php'; ?>
 		<div class="clearfix"></div>
 		<div class="container">
 			<?php
@@ -107,14 +107,14 @@ include_once 'dbconfig.php';
   							<form method="post">
     							<input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
     							<button class="btn btn-large btn-primary" type="submit" name="btn-del"><i class="glyphicon glyphicon-trash"></i> &nbsp; YA</button>
-    							<a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; TIDAK</a>
+    							<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; TIDAK</a>
     						</form>
 								<?php
 							}
 							else
 							{
 								?>
-    							<a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Keembali ke Index</a>
+    							<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Keembali ke Index</a>
     						<?php
 							}
 							?>

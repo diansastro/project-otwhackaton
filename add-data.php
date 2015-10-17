@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="stylesheet" href="bootstrap/css/site.min.css">
 		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
 		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
@@ -56,7 +57,7 @@
 		}
 ?>
 
-<?php include_once 'header.php'; ?>
+<?php include_once 'index_menu.php'; ?>
 		<div class="clearfix"></div>
 <?php
 	if(isset($_GET['inserted']))
@@ -64,7 +65,7 @@
 			?>
     			<div class="container">
 						<div class="alert alert-info">
-    					<strong>WOW!</strong> Record was inserted successfully <a href="index.php">HOME</a>!
+    					<strong>Selamat!</strong> Data berhasil ditambahkan || Kembali ke <a href="view.php"> <strong>Beranda</strong></a>
 						</div>
 					</div>
     	<?php
@@ -75,7 +76,7 @@
 					?>
     				<div class="container">
 								<div class="alert alert-warning">
-    							<strong>SORRY!</strong> ERROR while inserting record !
+    							<strong>Maaf!</strong> Data tidak berhasil ditambahkan !
 								</div>
 						</div>
     			<?php
@@ -84,11 +85,18 @@
 <div class="clearfix"></div><br />
 <div class="container">
 	 <form method='post'>
-    <table class='table table-bordered table-responsive'>
+    <table class='table'>
 
         <tr>
             <td>Kesatuan</td>
-            <td><input type='text' name='kesatuan' class='form-control' required></td>
+            <td><select class="form-control" name="kesatuan">
+										<option>Satlantas Makassar</option>
+										<option>Satlantas Gowa</option>
+										<option>Satlantas Wajo</option>
+										<option>Satlantas Panakukang</option>
+										<option>Satlantas Panaikang</option>
+								</select>
+						</td>
         </tr>
         <tr>
             <td>Nama Terdakwa</td>
@@ -104,11 +112,11 @@
         </tr>
 				<tr>
             <td>Pekerjaan</td>
-            <td><input type='radio' value="Petani" name='pekerjaan' id="pekerjaan"/>Petani
-								<input type='radio' value="Pedagang" name='pekerjaan' id="pekerjaan"/>Pedagang
-								<input type='radio' value="Wiraswasta" name='pekerjaan' id="pekerjaan" />Wiraswasta
-								<input type='radio' value="PNS" name='pekerjaan' id="pekerjaan" />PNS
-						</td>
+            		<td><input type='radio' value="Petani" name='pekerjaan' id="pekerjaan" >Petani
+											<input type='radio' value="Pedagang" name='pekerjaan' id="pekerjaan">Pedagang
+											<input type='radio' value="Wiraswasta" name='pekerjaan' id="pekerjaan" >Wiraswasta
+											<input type='radio' value="PNS" name='pekerjaan' id="pekerjaan" >PNS
+								</td>
         </tr>
 				<tr>
             <td>Pendidikan</td>
@@ -208,7 +216,7 @@
             		<button type="submit" class="btn btn-primary" name="btn-save">
     							<span class="glyphicon glyphicon-plus"></span> Create New Record
 								</button>
-            		<a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
+            		<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
             </td>
         </tr>
     </table>

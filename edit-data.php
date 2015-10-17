@@ -3,6 +3,8 @@
 		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
 		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
 		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+		<link rel="stylesheet" href="bootstrap/css/site.min.css">
+		<script type="text/javascript" src="bootstrap/js/site.min.js"></script>
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -44,11 +46,11 @@
 				$psllanggar 		 = $_POST['pasal_dilanggar'];
 
 					if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
-												 	$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-												 	$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
+													 $pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
 							{
 									$msg = "<div class='alert alert-info'>
-													<strong>Selamat</strong> Data berhasil diupdate <a href='index.php'><strong>HOME</strong></a>!
+													<strong>Selamat</strong> Data berhasil diupdate <a href='view.php'><strong>HOME</strong></a>!
 													</div>";
 							}
 							else
@@ -64,7 +66,7 @@
 						extract($crud->getID($id));
 				}
 ?>
-	<?php include_once 'header.php'; ?>
+	<?php include_once 'index_menu.php'; ?>
 			<div class="clearfix"></div>
 			<div class="container">
 				<?php
@@ -166,7 +168,7 @@
                 <button type="submit" class="btn btn-primary" name="btn-update">
     								<span class="glyphicon glyphicon-edit"></span>  Update Data
 								</button>
-                <a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; BATAL</a>
+                <a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; BATAL</a>
             	</td>
         	</tr>
     	</table>

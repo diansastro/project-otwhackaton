@@ -143,10 +143,10 @@
 								<td	 class="danger"> <?php print($row['surat_sita']); ?></td>
 								<td	 class="info"> 	 <?php print($row['ambil_sitaan']); ?></td>
 								<td	 class="active"> <?php print($row['pasal_dilanggar']); ?></td>
-                <td align="center">
+                <td  class="success" align="center">
                 	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="btn btn-info">Edit</i></a>
                 </td>
-                <td align="center">
+                <td class="warning" align="center">
                 	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
                 </td>
             		</tr>
