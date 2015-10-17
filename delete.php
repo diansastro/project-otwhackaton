@@ -36,32 +36,30 @@
 	 		if(isset($_GET['delete_id']))
 	 			{
 		 				?>
-
-							<div class="container">
 							<div class="table-responsive">
          			<table class='table'>
-         				<tr>
-					 				<th>No Tilang</th> <!-- cetak tebal-->
+								<tr class="table-bordered">
+					 				<th>No</th> <!-- cetak tebal-->
 					 				<th>Kesatuan</th>
-					 				<th>Nama Terdakwa</th>
+					 				<th>Terdakwa</th>
 					 				<th>Alamat</th>
 					 				<th>No Hp</th>
 					 				<th>Pekerjaan</th>
 					 				<th>Pendidikan</th>
 					 				<th>Umur</th>
-					 				<th>Tempat Lahir</th>
-					 				<th>Tanggal Lahir</th>
+					 				<th>T Lahir</th>
+					 				<th>Tgl Lahir</th>
 					 				<th>No KTP</th>
-					 				<th>SIM Gol</th>
+					 				<th>SIM</th>
 					 				<th>No DD</th>
-					 				<th>Jenis Kendaraan</th>
-					 				<th>Tanggal Tilang</th>
-					 				<th>Jam Tilang</th>
+					 				<th>Kendaraan</th>
+					 				<th>Tgl Tilang</th>
+					 				<th>Jam</th>
 					 				<th>Jalan</th>
 					 				<th>Wilayah</th>
-					 				<th>Surat Sita</th>
-					 				<th>Pengambil Surat</th>
-					 				<th>Pasal Dilanggar</th>
+					 				<th>Disita</th>
+					 				<th>Ambil Surat</th>
+					 				<th>Pelanggaran</th>
          			</tr>
          			<?php
          					$stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:id");
@@ -70,27 +68,27 @@
          						{
              					?>
              						<tr>
-             								<td><?php print($row['id']); ?></td>
-             								<td><?php print($row['kesatuan']); ?></td>
-             								<td><?php print($row['nama_dakwa']); ?></td>
-             								<td><?php print($row['alamat']); ?></td>
-         	 	 								<td><?php print($row['no_hp']); ?></td>
-						 								<td><?php print($row['pekerjaan']); ?></td>
-						 								<td><?php print($row['pendidikan']); ?></td>
-						 								<td><?php print($row['umur']); ?></td>
-						 								<td><?php print($row['t_lahir']); ?></td>
-						 								<td><?php print($row['tgl_lahir']); ?></td>
-						 								<td><?php print($row['no_ktp']); ?></td>
-						 								<td><?php print($row['sim_gol']); ?></td>
-						 								<td><?php print($row['no_dd']); ?></td>
-						 								<td><?php print($row['jns_kendaraan']); ?></td>
-						 								<td><?php print($row['tgl_tilang']); ?></td>
-						 								<td><?php print($row['jam_tilang']); ?></td>
-						 								<td><?php print($row['jalan']); ?></td>
-						 								<td><?php print($row['wilayah']); ?></td>
-						 								<td><?php print($row['surat_sita']); ?></td>
-						 								<td><?php print($row['ambil_sitaan']); ?></td>
-						 								<td><?php print($row['pasal_dilanggar']); ?></td>
+             								<td class="active"><?php print($row['id']); ?></td>
+             								<td class="success"><?php print($row['kesatuan']); ?></td>
+             								<td class="warning"><?php print($row['nama_dakwa']); ?></td>
+             								<td class="danger"><?php print($row['alamat']); ?></td>
+         	 	 								<td class="info"><?php print($row['no_hp']); ?></td>
+						 								<td class="active"><?php print($row['pekerjaan']); ?></td>
+						 								<td class="success"><?php print($row['pendidikan']); ?></td>
+						 								<td class="warning"><?php print($row['umur']); ?></td>
+						 								<td class="danger"><?php print($row['t_lahir']); ?></td>
+						 								<td class="info"><?php print($row['tgl_lahir']); ?></td>
+						 								<td class="active"><?php print($row['no_ktp']); ?></td>
+						 								<td class="success"><?php print($row['sim_gol']); ?></td>
+						 								<td class="warning"><?php print($row['no_dd']); ?></td>
+						 								<td class="danger"><?php print($row['jns_kendaraan']); ?></td>
+						 								<td class="info"><?php print($row['tgl_tilang']); ?></td>
+						 								<td class="active"><?php print($row['jam_tilang']); ?></td>
+						 								<td class="success"><?php print($row['jalan']); ?></td>
+						 								<td class="warning"><?php print($row['wilayah']); ?></td>
+						 								<td class="danger"><?php print($row['surat_sita']); ?></td>
+						 								<td class="info"><?php print($row['ambil_sitaan']); ?></td>
+						 								<td class="active"><?php print($row['pasal_dilanggar']); ?></td>
              						</tr>
              					<?php
          					}
@@ -99,7 +97,6 @@
         		<?php
 	 			}
 	 		?>
-		</div>
 	</div>
 	</div>
 
@@ -123,7 +120,8 @@
     						<?php
 							}
 							?>
+						<br></br>
+							<?php include ('footer.php'); ?>
+
 		</p>
 	</div>
-<br></br>
-<?php include ('footer.php'); ?>
