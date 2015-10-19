@@ -14,7 +14,7 @@
     		<![endif]-->
 
     </head>
-    <body>
+    <body style="background-color: #f1f2f6;">
     		<div class="docs-header">
     			<!--nav-->
     			<nav class="navbar navbar-default navbar-custom" role="navigation">

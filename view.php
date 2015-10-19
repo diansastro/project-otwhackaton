@@ -1,5 +1,5 @@
 <?php include_once 'dbconfig.php'; ?>
-<?php include_once 'header.php'; ?>
+<?php include('header.php'); ?>
 <br></br>
 		<div class="clearfix"></div>
 			<div class="container">
@@ -10,7 +10,7 @@
 					<div class="row">
 						<div class="col-md-6">
 								<div class="input-group form-search">
-									<input type="text" class="form-control search-query">
+									<input type="text" class="form-control search-query"  placeholder="Cari berdasarkan No Tilang">
 										<span class="input-group-btn">
 													<button type="submit" class="btn btn-primary" data-type="last">Cari</button>
 										</span>
@@ -20,41 +20,44 @@
 					</br>
 					<div class="table-responsive">
 	 				<table class='table'>
-						<thead>
+
 						<tr class="table-bordered">
 			        <th>No</th> <!-- cetak tebal-->
 			        <th>Kesatuan</th>
+							<th>Petugas</th>
 			        <th>Terdakwa</th>
+							<th>Foto</th>
 			        <th>Alamat</th>
 			        <th>No Hp</th>
 			        <th>Pekerjaan</th>
 			        <th>Pendidikan</th>
 			        <th>Umur</th>
 			        <th>T_Lahir</th>
-			        <th>Tgl_Lahir</th>
+			        <th>Tgl Lahir</th>
 				      <th>No KTP</th>
 							<th>SIM</th>
 							<th>No DD</th>
 							<th>Kendaraan</th>
-							<th>Tgl_Tilang</th>
-							<th>Jam_Tilang</th>
+							<th>Tgl Tilang</th>
+							<th>Jam</th>
 							<th>Jalan</th>
 							<th>Wilayah</th>
 							<th>Disita</th>
 							<th>Sidang</th>
 							<th>Pelanggaran</th>
-     					<th colspan="3" align="center">Actions</th>
+							<th>Denda</th>
+							<th>Kertas</th>
+     					<th colspan="3" style='text-align:center';>Actions</th>
      			</tr>
-				</thead>
+
 					<?php
 							$query = "SELECT * FROM datatilang";
 							$records_per_page=3;
 							$newquery = $crud->paging($query,$records_per_page);
 							$crud->dataview($newquery);
 	 				?>
-
 					<tr>
-        		<td colspan="7" align="center">
+        		<td colspan="14" align="center">
  							<div class="pagination-wrap">
             			<?php $crud->paginglink($query,$records_per_page);?>
         			</div>

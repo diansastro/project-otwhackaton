@@ -12,7 +12,9 @@
 	if(isset($_POST['btn-save']))
 	{
 		$kes	 			 = $_POST['kesatuan'];
+		$petugas     = $_POST['id_petugas'];
 		$ndakwa 		 = $_POST['nama_dakwa'];
+		$foto				 = $_POST['foto'];
 		$almt				 = $_POST['alamat'];
 		$nhp 				 = $_POST['no_hp'];
 		$pkrj 			 = $_POST['pekerjaan'];
@@ -31,10 +33,12 @@
 		$ssita	 		 = $_POST['surat_sita'];
 		$ambsita	 	 = $_POST['ambil_sitaan'];
 		$psllanggar  = $_POST['pasal_dilanggar'];
+		$denda			 = $_POST['jml_denda'];
+		$kertas			 = $_POST['kertas'];
 
 			if($crud->create($kes,$ndakwa,$almt,$nhp,$pkrj,
 											$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
+											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas))
 				{
 					header("Location: add-data.php?inserted");
 				}
@@ -45,7 +49,7 @@
 		}
 ?>
 
-<?php include ('header.php'); ?>
+<?php include('header.php'); ?>
 		<div class="clearfix"></div>
 <?php
 	if(isset($_GET['inserted']))
@@ -85,9 +89,17 @@
 								</select>
 						</td>
         </tr>
+				<tr>
+						<td>Petugas</td>
+						<td><input type='text' name='id_petugas' class='form-control' required></td>
+				</tr>
         <tr>
             <td>Nama Terdakwa</td>
             <td><input type='text' name='nama_dakwa' class='form-control' required></td>
+        </tr>
+				<tr>
+            <td>Foto</td>
+            <td><input type='text' name='foto' class='form-control' required></td>
         </tr>
 				<tr>
             <td>Alamat</td>
@@ -216,6 +228,18 @@
 						<td>Pasal Dilanggar</td>
 						<td><input type='text' name='pasal_dilanggar' class='form-control' required></td>
 				</tr>
+				<tr>
+						<td>Jml Denda</td>
+						<td><input type='text' name='jml_denda' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Warna Kertas</td>
+						<td><select class="form-control" name="kertas" required>
+										<option>Merah</option>
+										<option>Biru</option>
+								</select>
+						</td>
+				</tr>
             <td colspan="2">
             		<button type="submit" class="btn btn-primary" name="btn-save">
     							<span class="glyphicon glyphicon-plus"></span> Create New Record
@@ -223,6 +247,7 @@
             		<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
             </td>
         </tr>
+
     </table>
 	</form>
 </div>

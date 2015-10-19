@@ -8,19 +8,21 @@
 			}
 
 		public function create($kes,$ndakwa,$almt,$nhp,$pkrj,$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
+													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas)
 				{
 						try
 						{
 							$stmt = $this->db->prepare("INSERT INTO datatilang(kesatuan,nama_dakwa,alamat,
 																no_hp,pekerjaan,pendidikan,umur,t_lahir,tgl_lahir,no_ktp,sim_gol,
 																no_dd,jns_kendaraan,tgl_tilang,jam_tilang,jalan,wilayah,surat_sita,
-																ambil_sitaan,pasal_dilanggar) VALUES(:kes, :ndakwa, :almt,
+																ambil_sitaan,pasal_dilanggar,foto,jml_denda,id_petugas,kertas) VALUES(:kes, :ndakwa, :almt,
 																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr, :nktp, :simgol, :nodd,
-																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar)");
+																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar, :foto, :denda, :petugas, :kertas)");
 
 						 $stmt->bindparam(":kes",$kes);
+						 $stmt->bindparam(":petugas",$petugas);
 						 $stmt->bindparam(":ndakwa",$ndakwa);
+						 $stmt->bindparam(":foto",$foto);
 						 $stmt->bindparam(":almt",$almt);
 						 $stmt->bindparam(":nhp",$nhp);
 						 $stmt->bindparam(":pkrj",$pkrj);
@@ -39,6 +41,8 @@
 						 $stmt->bindparam(":ssita",$ssita);
 						 $stmt->bindparam(":ambsita",$ambsita);
 						 $stmt->bindparam(":psllanggar",$psllanggar);
+						 $stmt->bindparam(":denda",$denda);
+						 $stmt->bindparam(":kertas",$kertas);
 						 $stmt->execute();
 						 return true;
 					 }
@@ -59,7 +63,7 @@
 
 			public function update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
 														$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-														$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar)
+														$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas)
 				{
 					try
 					{
@@ -69,9 +73,12 @@
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
 																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar WHERE id=:id ");
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar, foto=:foto,
+																														jml_denda=:denda, id_petugas=:petugas, kertas=:kertas WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
+						$stmt->bindparam(":petugas",$petugas);
 						$stmt->bindparam(":ndakwa",$ndakwa);
+						$stmt->bindparam(":foto",$foto);
 						$stmt->bindparam(":almt",$almt);
 						$stmt->bindparam(":nhp",$nhp);
 						$stmt->bindparam(":pkrj",$pkrj);
@@ -91,6 +98,8 @@
 						$stmt->bindparam(":ambsita",$ambsita);
 						$stmt->bindparam(":psllanggar",$psllanggar);
 						$stmt->bindparam(":id",$id);
+						$stmt->bindparam(":denda",$denda);
+						$stmt->bindparam(":kertas",$kertas);
 					  $stmt->execute();
 						return true;
 
@@ -121,10 +130,12 @@
 					while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 						{
 							?>
-                <tr>
+              <tr>
                 <td  class="active"> <?php print($row['id']); ?></td>
                 <td  class="success"><?php print($row['kesatuan']); ?></td>
+								<td	 class="info"> 	 <?php print($row['id_petugas']); ?></td>
                 <td  class="warning"><?php print($row['nama_dakwa']); ?></td>
+								<td	 class="active"> <?php print($row['foto']); ?></td>
                 <td  class="danger"> <?php print($row['alamat']); ?></td>
                 <td  class="info">	 <?php print($row['no_hp']); ?></td>
 								<td  class="active"> <?php print($row['pekerjaan']); ?></td>
@@ -143,13 +154,18 @@
 								<td	 class="danger"> <?php print($row['surat_sita']); ?></td>
 								<td	 class="info"> 	 <?php print($row['ambil_sitaan']); ?></td>
 								<td	 class="active"> <?php print($row['pasal_dilanggar']); ?></td>
+								<td	 class="success"><?php print($row['jml_denda']); ?></td>
+								<td	 class="warning"><?php print($row['kertas']); ?></td>
                 <td  class="success" align="center">
                 	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="btn btn-primary">Edit</i></a>
                 </td>
                 <td class="warning" align="center">
                 	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
                 </td>
-            		</tr>
+								<td class="info" align="center">
+									<a href="<?php ?>"><i class="btn btn-info">Print</i></a>
+								</td>
+            	</tr>
           			<?php
 						}
 				 }

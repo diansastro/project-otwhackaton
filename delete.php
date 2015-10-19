@@ -41,7 +41,9 @@
 								<tr class="table-bordered">
 					 				<th>No</th> <!-- cetak tebal-->
 					 				<th>Kesatuan</th>
+									<th>Petugas</th>
 					 				<th>Terdakwa</th>
+									<th>Foto</th>
 					 				<th>Alamat</th>
 					 				<th>No Hp</th>
 					 				<th>Pekerjaan</th>
@@ -60,6 +62,8 @@
 					 				<th>Disita</th>
 					 				<th>Ambil Surat</th>
 					 				<th>Pelanggaran</th>
+									<th>Jml Denda</th>
+									<th>Kertas</th>
          			</tr>
          			<?php
          					$stmt = $DB_con->prepare("SELECT * FROM datatilang WHERE id=:id");
@@ -68,27 +72,31 @@
          						{
              					?>
              						<tr>
-             								<td class="active"><?php print($row['id']); ?></td>
+             								<td class="active"> <?php print($row['id']); ?></td>
              								<td class="success"><?php print($row['kesatuan']); ?></td>
+														<td	class="info"> 	<?php print($row['id_petugas']); ?></td>
              								<td class="warning"><?php print($row['nama_dakwa']); ?></td>
-             								<td class="danger"><?php print($row['alamat']); ?></td>
-         	 	 								<td class="info"><?php print($row['no_hp']); ?></td>
-						 								<td class="active"><?php print($row['pekerjaan']); ?></td>
+														<td	class="active"> <?php print($row['foto']); ?></td>
+             								<td class="danger"> <?php print($row['alamat']); ?></td>
+         	 	 								<td class="info">   <?php print($row['no_hp']); ?></td>
+						 								<td class="active"> <?php print($row['pekerjaan']); ?></td>
 						 								<td class="success"><?php print($row['pendidikan']); ?></td>
 						 								<td class="warning"><?php print($row['umur']); ?></td>
-						 								<td class="danger"><?php print($row['t_lahir']); ?></td>
-						 								<td class="info"><?php print($row['tgl_lahir']); ?></td>
-						 								<td class="active"><?php print($row['no_ktp']); ?></td>
+						 								<td class="danger"> <?php print($row['t_lahir']); ?></td>
+						 								<td class="info">   <?php print($row['tgl_lahir']); ?></td>
+						 								<td class="active"> <?php print($row['no_ktp']); ?></td>
 						 								<td class="success"><?php print($row['sim_gol']); ?></td>
 						 								<td class="warning"><?php print($row['no_dd']); ?></td>
-						 								<td class="danger"><?php print($row['jns_kendaraan']); ?></td>
-						 								<td class="info"><?php print($row['tgl_tilang']); ?></td>
-						 								<td class="active"><?php print($row['jam_tilang']); ?></td>
+						 								<td class="danger"> <?php print($row['jns_kendaraan']); ?></td>
+						 								<td class="info">   <?php print($row['tgl_tilang']); ?></td>
+						 								<td class="active"> <?php print($row['jam_tilang']); ?></td>
 						 								<td class="success"><?php print($row['jalan']); ?></td>
 						 								<td class="warning"><?php print($row['wilayah']); ?></td>
-						 								<td class="danger"><?php print($row['surat_sita']); ?></td>
-						 								<td class="info"><?php print($row['ambil_sitaan']); ?></td>
-						 								<td class="active"><?php print($row['pasal_dilanggar']); ?></td>
+						 								<td class="danger"> <?php print($row['surat_sita']); ?></td>
+						 								<td class="info">   <?php print($row['ambil_sitaan']); ?></td>
+						 								<td class="active"> <?php print($row['pasal_dilanggar']); ?></td>
+														<td	class="success"><?php print($row['jml_denda']); ?></td>
+														<td	class="warning"><?php print($row['kertas']); ?></td>
              						</tr>
              					<?php
          					}
