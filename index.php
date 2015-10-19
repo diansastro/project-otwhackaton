@@ -1,8 +1,9 @@
 <html>
-	<body style="background-color: #f1f2f6;">
-		<!-- Ini Sliderx-->
-		<?php include('index_slider.php'); ?>
+	<head>
 		<?php include('header.php'); ?>
+		<?php include('index_slider.php'); ?>
+	</head>
+	<body style="background-color: #f1f2f6;">
 		<?php include('footer.php')?>
 	</body>
  </html>

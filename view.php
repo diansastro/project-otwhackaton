@@ -1,9 +1,9 @@
 <?php include_once 'dbconfig.php'; ?>
 <?php include_once 'header.php'; ?>
-</br>
+<br></br>
 		<div class="clearfix"></div>
 			<div class="container">
-					<a href="add-data.php" class="btn btn-large btn-info"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah Data</a>
+					<a href="add-data.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah Data</a>
 			</div>
 			<div class="clearfix"></div></br>
 				<div class="container">

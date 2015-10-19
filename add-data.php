@@ -1,23 +1,12 @@
 <html>
 	<head>
-			<link rel="stylesheet" href="bootstrap/css/datepicker.css">
+			<title>Tambah Data </title>
+			<link rel="stylesheet" href="bootstrap/css/datepicker.min.css">
+			<link rel="stylesheet" href="bootstrap/css/datepicker3.min.css">
 			<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-			<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+			<script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript">
-				$(document).ready(function () {
-						$('#example3').datepicker({
-							format: "dd/mm/yyyy"
-						});
-					});
-				$(document).ready(function () {
-						$('#example4').datepicker({
-							format: "dd/mm/yyyy"
-							});
-						});
-		</script>
-
 <?php
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-save']))
@@ -56,8 +45,8 @@
 		}
 ?>
 
-<?php include_once 'header.php'; ?>
-		<!--div class="clearfix"></div-->
+<?php include ('header.php'); ?>
+		<div class="clearfix"></div>
 <?php
 	if(isset($_GET['inserted']))
 		{
@@ -81,11 +70,10 @@
     			<?php
 			}
 		?>
-<div class="clearfix"></div><br />
+<div class="clearfix"></div><br></br>
 <div class="container">
 	 <form method='post'>
     <table class='table'>
-
         <tr>
             <td>Kesatuan</td>
             <td><select class="form-control" name="kesatuan">
@@ -140,7 +128,16 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir'  id ='example3' class='form-control' required></td>
+						<td><input type='text' name='tgl_lahir' id='example3' class='form-control' required>
+								<script type="text/javascript">
+									$(document).ready(function () {
+											$('#example3').datepicker({
+												format: "dd/mm/yyyy"
+											});
+										});
+								</script>
+					</td>
+					</td>
         </tr>
         <tr>
 				<tr>
@@ -175,7 +172,15 @@
 				</tr>
 				<tr>
 						<td>Tanggal Tilang</td>
-						<td><input type='text' name='tgl_tilang' id = 'example4' class='form-control' required></td>
+						<td><input type='text' name='tgl_tilang' id = 'example4' class='form-control' required>
+							<script type="text/javascript">
+							$(document).ready(function () {
+									$('#example4').datepicker({
+										format: "dd/mm/yyyy"
+										});
+									});
+							</script>
+						</td>
 				</tr>
 				<tr>
 						<td>Jam Tilang</td>

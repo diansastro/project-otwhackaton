@@ -12,9 +12,9 @@
     		  <script src="js/html5shiv.js"></script>
     		  <script src="js/respond.min.js"></script>
     		<![endif]-->
-    		<script type="text/javascript" src="bootstrap/js/site.min.js"></script>
+
     </head>
-    <body style="background-color: #f1f2f6;">
+    <body>
     		<div class="docs-header">
     			<!--nav-->
     			<nav class="navbar navbar-default navbar-custom" role="navigation">
@@ -39,5 +39,4 @@
     			</nav>
     		</div>
   </body>
-
 </html>

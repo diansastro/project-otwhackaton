@@ -38,7 +38,7 @@
   border-right: 7px solid transparent;
   border-bottom: 7px solid #ccc;
   border-top: 0;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
+
   position: absolute;
 }
 .datepicker-dropdown:after {

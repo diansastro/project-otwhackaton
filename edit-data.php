@@ -1,8 +1,10 @@
 <html>
 <head>
-<link rel="stylesheet" href="bootstrap/css/datepicker.css">
-<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-<script src="bootstrap/js/bootstrap-datepicker.js"></script>
+	<title>Edit Data</title>
+	<link rel="stylesheet" href="bootstrap/css/datepicker.min.css">
+	<link rel="stylesheet" href="bootstrap/css/datepicker3.min.css">
+	<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
 </head>
 <body>
 		<script type="text/javascript">

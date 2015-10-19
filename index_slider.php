@@ -1,3 +1,7 @@
+<html>
+<head>
+	<script type="text/javascript" src="bootstrap/js/site.min.js"></script>
+</head>
 <div class="jumbotron">
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -20,3 +24,4 @@
 		</a>
 	</div>
 </div>
+</html>
