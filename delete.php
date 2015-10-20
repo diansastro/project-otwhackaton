@@ -107,7 +107,6 @@
 	 		?>
 	</div>
 	</div>
-
 	<div class="container">
 		<p>
 				<?php
@@ -128,8 +127,7 @@
     						<?php
 							}
 							?>
-						<br></br>
-							<?php include ('footer.php'); ?>
-
 		</p>
+		<br></br>
+			<?php include ('footer.php'); ?>
 	</div>

@@ -48,7 +48,6 @@
 					}
 		}
 ?>
-
 <?php include('header.php'); ?>
 		<div class="clearfix"></div>
 <?php
@@ -240,17 +239,15 @@
 								</select>
 						</td>
 				</tr>
+				<tr>
             <td colspan="2">
             		<button type="submit" class="btn btn-primary" name="btn-save">
-    							<span class="glyphicon glyphicon-plus"></span> Create New Record
+    							<span class="glyphicon glyphicon-plus"></span> Tambahkan Data
 								</button>
-            		<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
+            		<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back </a>
             </td>
         </tr>
-
     </table>
 	</form>
 </div>
 <?php include ('footer.php')?>
-</body>>
-</html>

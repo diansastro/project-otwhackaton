@@ -173,7 +173,7 @@
 			 	{
 					?>
             	<tr>
-            	<td>Nothing here...</td>
+            	<td>Data tidak ditemukan...</td>
             	</tr>
             	<?php
 				}

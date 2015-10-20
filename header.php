@@ -5,7 +5,7 @@
     		<meta charset="utf-8">
     		<link rel="stylesheet" href="bootstrap/css/site.min.css">
     		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
+    		<!--link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800,700,400italic,600italic,700italic,800italic,300italic" rel="stylesheet" type="text/css">
     		<!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'> -->
     		<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     		<!--[if lt IE 9]>
@@ -30,9 +30,10 @@
     					</div>
     					<div class="collapse navbar-collapse">
     						<ul class="nav navbar-nav navbar-right">
-    								<li><a class="nav-link current" href="#">Home</a></li>
+    								<li><a class="nav-link current" href="index.php">Home</a></li>
     								<li><a class="nav-link" href="#">About</a></li>
     								<li><a class="nav-link" href="#">Login</a></li>
+                    <li><a class="nav-link" href="view.php">View</a></li>
     						</ul>
     					</div>
     				</div>

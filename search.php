@@ -1,10 +1,6 @@
 <?php include_once 'dbconfig.php'; ?>
 <?php include('header.php'); ?>
 <br></br>
-		<div class="clearfix"></div>
-			<div class="container">
-					<a href="add-data.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah Data</a>
-			</div>
 			<div class="clearfix"></div></br>
 				<div class="container">
 					<div class="row">
@@ -16,11 +12,17 @@
 													<button type="submit" class="btn btn-primary" data-type="last" id="cari" name="cari">Cari</button>
 										</span>
 								</div>
+								<tr>
+										</br>
+				            <td colspan="2">
+				            		<a href="view.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back </a>
+				            </td>
+				        </tr>
 							</div>
 						</form>
-					</div>
+						</div>
 					</br>
-				<div class="table-responsive">
+					<div class="table-responsive">
 	 				<table class='table'>
 						<tr class="table-bordered">
 			        <th>No</th> <!-- cetak tebal-->
@@ -51,22 +53,18 @@
      					<th colspan="3" style='text-align:center';>Actions</th>
      			</tr>
 					<?php
-							$query = "SELECT * FROM datatilang";
-							$records_per_page=3;
-							$newquery = $crud->paging($query,$records_per_page);
-							$crud->dataview($newquery);
-	 				?>
-					<tr>
-        		<td colspan="14" align="center">
- 							<div class="pagination-wrap">
-            			<?php $crud->paginglink($query,$records_per_page);?>
-        			</div>
-        		</td>
-    			</tr>
+						$id1 = null;
+						if(!empty($_GET['id1'])){
+							$id1 = $_REQUEST['id1'];
+						}
+						$query = "SELECT * FROM datatilang Where id=".$id1." ";
+						$records_per_page=3;
+						$newquery = $crud->paging($query,$records_per_page);
+						$crud->dataview($newquery);
+	 					?>
 			</table>
 		</div>
-		</div>
-		<?php include('footer.php');  ?>
+	</div>
 		<?php
 			if(isset($_POST['cari'])){
 				/*session_start();
@@ -78,3 +76,5 @@
 					}
 			}
 		 ?>
+<br></br>
+<?php include('footer.php');  ?>
