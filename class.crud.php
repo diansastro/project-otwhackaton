@@ -7,21 +7,22 @@
 				$this->db = $DB_con;
 			}
 
-		public function create($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
-													$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-													$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
+		public function create($kes,$ndakwa,$almt,$nhp,$pkrj,$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas)
 				{
 						try
 						{
-							$stmt = $this->db->prepare("INSERT INTO datatilang(no_tilang,kesatuan,nama_dakwa,alamat,
+							$stmt = $this->db->prepare("INSERT INTO datatilang(kesatuan,nama_dakwa,alamat,
 																no_hp,pekerjaan,pendidikan,umur,t_lahir,tgl_lahir,no_ktp,sim_gol,
 																no_dd,jns_kendaraan,tgl_tilang,jam_tilang,jalan,wilayah,surat_sita,
-																ambil_sitaan,pasal_dilanggar) VALUES(:notil, :kes, :ndakwa, :almt,
-																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr,:nktp, :simgol, :nodd,
-																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar)");
-						 $stmt->bindparam(":notil",$notil);
+																ambil_sitaan,pasal_dilanggar,foto,jml_denda,id_petugas,kertas) VALUES(:kes, :ndakwa, :almt,
+																:nhp, :pkrj, :pddkn, :umur, :tlhir, :tglhr, :nktp, :simgol, :nodd,
+																:jnskendara, :tgltilang, :jmtlg, :jln, :wil, :ssita, :ambsita, :psllanggar, :foto, :denda, :petugas, :kertas)");
+
 						 $stmt->bindparam(":kes",$kes);
+						 $stmt->bindparam(":petugas",$petugas);
 						 $stmt->bindparam(":ndakwa",$ndakwa);
+						 $stmt->bindparam(":foto",$foto);
 						 $stmt->bindparam(":almt",$almt);
 						 $stmt->bindparam(":nhp",$nhp);
 						 $stmt->bindparam(":pkrj",$pkrj);
@@ -40,6 +41,8 @@
 						 $stmt->bindparam(":ssita",$ssita);
 						 $stmt->bindparam(":ambsita",$ambsita);
 						 $stmt->bindparam(":psllanggar",$psllanggar);
+						 $stmt->bindparam(":denda",$denda);
+						 $stmt->bindparam(":kertas",$kertas);
 						 $stmt->execute();
 						 return true;
 					 }
@@ -51,36 +54,37 @@
 			}
 
 			public function getID($id)
-				{
-					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:notil");
-					$stmt->execute(array(":notil"=>$id));
+					{
+					$stmt = $this->db->prepare("SELECT * FROM datatilang WHERE id=:id");
+					$stmt->execute(array(":id"=>$id));
 					$editRow=$stmt->fetch(PDO::FETCH_ASSOC);
 					return $editRow;
 				}
 
-			public function update($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
-														$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-														$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar)
+			public function update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
+														$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+														$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas)
 				{
 					try
 					{
-						$stmt=$this->db->prepare("UPDATE datatilang SET no_tilang=:notil, kesatuan=:kes, nama_dakwa=:ndakwa,
+						$stmt=$this->db->prepare("UPDATE datatilang SET kesatuan=:kes, nama_dakwa=:ndakwa,
 																														alamat=:almt, no_hp=:nhp, pekerjaan=:pkrj,
-																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhir,
+																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhr,
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
-																														no_dd=:no_dd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
-																														jam_tilang=:jmtlng, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar
-																			WHERE id=:notil");
-						$stmt->bindparam(":notil",$notil);
+																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
+																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar, foto=:foto,
+																														jml_denda=:denda, id_petugas=:petugas, kertas=:kertas WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
+						$stmt->bindparam(":petugas",$petugas);
 						$stmt->bindparam(":ndakwa",$ndakwa);
+						$stmt->bindparam(":foto",$foto);
 						$stmt->bindparam(":almt",$almt);
 						$stmt->bindparam(":nhp",$nhp);
 						$stmt->bindparam(":pkrj",$pkrj);
 						$stmt->bindparam(":pddkn",$pddkn);
 						$stmt->bindparam(":umur",$umur);
-						$stmt->bindparam(":tlhir",$tlhir);
+						$stmt->bindparam(":tlhir",$tlhr);
 						$stmt->bindparam(":tglhr",$tglhr);
 						$stmt->bindparam(":nktp",$nktp);
 						$stmt->bindparam(":simgol",$simgol);
@@ -93,23 +97,27 @@
 			    	$stmt->bindparam(":ssita",$ssita);
 						$stmt->bindparam(":ambsita",$ambsita);
 						$stmt->bindparam(":psllanggar",$psllanggar);
+						$stmt->bindparam(":id",$id);
+						$stmt->bindparam(":denda",$denda);
+						$stmt->bindparam(":kertas",$kertas);
 					  $stmt->execute();
 						return true;
 
 					}
-						catch(PDOException $e)
-							{
-								echo $e->getMessage();
-								return false;
-							}
+					catch(PDOException $e)
+						{
+							echo $e->getMessage();
+							return false;
+						}
 			}
 
-			public function delete($id){
-					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:notil");
+			public function delete($id)
+				{
+					$stmt = $this->db->prepare("DELETE FROM datatilang WHERE id=:id");
 					$stmt->bindparam(":id",$id);
 					$stmt->execute();
-			return true;
-			}
+					return true;
+				}
 
 	/* paging */
 
@@ -122,35 +130,42 @@
 					while($row=$stmt->fetch(PDO::FETCH_ASSOC))
 						{
 							?>
-                <tr>
-                <td><?php print($row['no_tilang']); ?></td>
-                <td><?php print($row['kesatuan']); ?></td>
-                <td><?php print($row['nama_dakwa']); ?></td>
-                <td><?php print($row['alamat']); ?></td>
-                <td><?php print($row['no_hp']); ?></td>
-								<td><?php print($row['pekerjaan']); ?></td>
-								<td><?php print($row['pendidikan']); ?></td>
-								<td><?php print($row['umur']); ?></td>
-								<td><?php print($row['t_lahir']); ?></td>
-								<td><?php print($row['tgl_lahir']); ?></td>
-								<td><?php print($row['no_ktp']); ?></td>
-								<td><?php print($row['sim_gol']); ?></td>
-								<td><?php print($row['no_dd']); ?></td>
-								<td><?php print($row['jns_kendaraan']); ?></td>
-								<td><?php print($row['tgl_tilang']); ?></td>
-								<td><?php print($row['jam_tilang']); ?></td>
-								<td><?php print($row['jalan']); ?></td>
-								<td><?php print($row['wilayah']); ?></td>
-								<td><?php print($row['surat_sita']); ?></td>
-								<td><?php print($row['ambil_sitaan']); ?></td>
-								<td><?php print($row['pasal_dilanggar']); ?></td>
-                <td align="center">
-                	<a href="edit-data.php?edit_id=<?php print($row['no_tilang']); ?>"><i class="glyphicon glyphicon-edit"></i></a>
+              <tr>
+                <td  class="active"> <?php print($row['id']); ?></td>
+                <td  class="success"><?php print($row['kesatuan']); ?></td>
+								<td	 class="info"> 	 <?php print($row['id_petugas']); ?></td>
+                <td  class="warning"><?php print($row['nama_dakwa']); ?></td>
+								<td	 class="active"> <?php print($row['foto']); ?></td>
+                <td  class="danger"> <?php print($row['alamat']); ?></td>
+                <td  class="info">	 <?php print($row['no_hp']); ?></td>
+								<td  class="active"> <?php print($row['pekerjaan']); ?></td>
+								<td  class="success"><?php print($row['pendidikan']); ?></td>
+								<td  class="warning"><?php print($row['umur']); ?></td>
+								<td	 class="danger"> <?php print($row['t_lahir']); ?></td>
+								<td	 class="info">	 <?php print($row['tgl_lahir']); ?></td>
+								<td  class="active"> <?php print($row['no_ktp']); ?></td>
+								<td	 class="success"><?php print($row['sim_gol']); ?></td>
+								<td	 class="warning"><?php print($row['no_dd']); ?></td>
+								<td	 class="danger"> <?php print($row['jns_kendaraan']); ?></td>
+								<td	 class="info">	 <?php print($row['tgl_tilang']); ?></td>
+								<td	 class="active"> <?php print($row['jam_tilang']); ?></td>
+								<td  class="success"><?php print($row['jalan']); ?></td>
+								<td	 class="warning"><?php print($row['wilayah']); ?></td>
+								<td	 class="danger"> <?php print($row['surat_sita']); ?></td>
+								<td	 class="info"> 	 <?php print($row['ambil_sitaan']); ?></td>
+								<td	 class="active"> <?php print($row['pasal_dilanggar']); ?></td>
+								<td	 class="success"><?php print($row['jml_denda']); ?></td>
+								<td	 class="warning"><?php print($row['kertas']); ?></td>
+                <td  class="success" align="center">
+                	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="btn btn-primary">Edit</i></a>
                 </td>
-                <td align="center">
-                	<a href="delete.php?delete_id=<?php print($row['no_tilang']); ?>"><i class="glyphicon glyphicon-remove-circle"></i></a>
+                <td class="warning" align="center">
+                	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
                 </td>
-            		</tr>
+								<td class="info" align="center">
+									<a href="<?php ?>"><i class="btn btn-info">Print</i></a>
+								</td>
+            	</tr>
           			<?php
 						}
 				 }
@@ -169,9 +184,11 @@
 				$starting_position=0;
 				if(isset($_GET["page_no"]))
 					{
-						$starting_position=($_GET["page_no"]-1)*$records_per_page;
+						$starting_position=($_GET["page_no"]-1)*
+						$records_per_page;
 					}
-						$query2=$query." limit $starting_position,$records_per_page";
+						$query2=$query." limit $starting_position,
+						$records_per_page";
 						return $query2;
 			}
 			public function paginglink($query,$records_per_page)

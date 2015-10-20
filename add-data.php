@@ -1,30 +1,20 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="bootstrap/css/datepicker.css">
+			<title>Tambah Data </title>
+			<link rel="stylesheet" href="bootstrap/css/datepicker.min.css">
+			<link rel="stylesheet" href="bootstrap/css/datepicker3.min.css">
+			<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
+			<script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
 	</head>
 	<body>
-		<script src="bootstrap/js/jquery-1.9.1.min.js"></script>
-		<script src="bootstrap/js/bootstrap-datepicker.js"></script>
-		<script type="text/javascript">
-				$(document).ready(function () {
-						$('#example1').datepicker({
-							format: "dd/mm/yyyy"
-						});
-					});
-				$(document).ready(function () {
-						$('#example2').datepicker({
-							format: "dd/mm/yyyy"
-							});
-						});
-		</script>
-
 <?php
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-save']))
 	{
-		$notil 			 = $_POST['no_tilang'];
 		$kes	 			 = $_POST['kesatuan'];
+		$petugas     = $_POST['id_petugas'];
 		$ndakwa 		 = $_POST['nama_dakwa'];
+		$foto				 = $_POST['foto'];
 		$almt				 = $_POST['alamat'];
 		$nhp 				 = $_POST['no_hp'];
 		$pkrj 			 = $_POST['pekerjaan'];
@@ -43,10 +33,12 @@
 		$ssita	 		 = $_POST['surat_sita'];
 		$ambsita	 	 = $_POST['ambil_sitaan'];
 		$psllanggar  = $_POST['pasal_dilanggar'];
+		$denda			 = $_POST['jml_denda'];
+		$kertas			 = $_POST['kertas'];
 
-			if($crud->create($notil,$kes,$ndakwa,$almt,$nhp,$pkrj,
-											$pddkn,$umur,$tlhir,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-											$tgltilang,$jmtlng,$jln,$wil,$ssita,$ambsita,$psllanggar))
+			if($crud->create($kes,$ndakwa,$almt,$nhp,$pkrj,
+											$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas))
 				{
 					header("Location: add-data.php?inserted");
 				}
@@ -57,7 +49,7 @@
 		}
 ?>
 
-<?php include_once 'header.php'; ?>
+<?php include('header.php'); ?>
 		<div class="clearfix"></div>
 <?php
 	if(isset($_GET['inserted']))
@@ -65,7 +57,7 @@
 			?>
     			<div class="container">
 						<div class="alert alert-info">
-    					<strong>WOW!</strong> Record was inserted successfully <a href="index.php">HOME</a>!
+    					<strong>Selamat!</strong> Data berhasil ditambahkan || Kembali ke <a href="view.php"> <strong>Beranda</strong></a>
 						</div>
 					</div>
     	<?php
@@ -76,27 +68,38 @@
 					?>
     				<div class="container">
 								<div class="alert alert-warning">
-    							<strong>SORRY!</strong> ERROR while inserting record !
+    							<strong>Maaf!</strong> Data tidak berhasil ditambahkan !
 								</div>
 						</div>
     			<?php
 			}
 		?>
-<div class="clearfix"></div><br />
+<div class="clearfix"></div><br></br>
 <div class="container">
 	 <form method='post'>
-    <table class='table table-bordered'>
-        <tr>
-            <td>No Tilang</td>
-            <td><input type='text' name='no_tilang' class='form-control' required></td>
-        </tr>
+    <table class='table'>
         <tr>
             <td>Kesatuan</td>
-            <td><input type='text' name='kesatuan' class='form-control' required></td>
+            <td><select class="form-control" name="kesatuan">
+										<option>Satlantas Makassar</option>
+										<option>Satlantas Gowa</option>
+										<option>Satlantas Wajo</option>
+										<option>Satlantas Panakukang</option>
+										<option>Satlantas Panaikang</option>
+								</select>
+						</td>
         </tr>
+				<tr>
+						<td>Petugas</td>
+						<td><input type='text' name='id_petugas' class='form-control' required></td>
+				</tr>
         <tr>
             <td>Nama Terdakwa</td>
             <td><input type='text' name='nama_dakwa' class='form-control' required></td>
+        </tr>
+				<tr>
+            <td>Foto</td>
+            <td><input type='text' name='foto' class='form-control' required></td>
         </tr>
 				<tr>
             <td>Alamat</td>
@@ -108,11 +111,24 @@
         </tr>
 				<tr>
             <td>Pekerjaan</td>
-            <td><input type='text' name='pekerjaan' class='form-control' required></td>
+            		<td><input type='radio' value="Petani" name='pekerjaan' id="pekerjaan" >Petani
+											<input type='radio' value="Pedagang" name='pekerjaan' id="pekerjaan">Pedagang
+											<input type='radio' value="Wiraswasta" name='pekerjaan' id="pekerjaan" >Wiraswasta
+											<input type='radio' value="PNS" name='pekerjaan' id="pekerjaan" >PNS
+								</td>
         </tr>
 				<tr>
             <td>Pendidikan</td>
-            <td><input type='text' name='pendidikan' class='form-control' required></td>
+            <td><select class="form-control" name="pendidikan">
+										<option>SD</option>
+										<option>SMP</option>
+										<option>SMA</option>
+										<option>D3</option>
+										<option>S1</option>
+										<option>S2</option>
+										<option>S3</option>
+								</select>
+ 						</td>
         </tr>
 				<tr>
             <td>Umur</td>
@@ -124,7 +140,16 @@
         </tr>
 				<tr>
             <td>Tanggal Lahir</td>
-						<td><input type="text" name='tgl_lahir'  id = 'example1' class='form-control' required></td>
+						<td><input type='text' name='tgl_lahir' id='example3' class='form-control' required>
+								<script type="text/javascript">
+									$(document).ready(function () {
+											$('#example3').datepicker({
+												format: "dd/mm/yyyy"
+											});
+										});
+								</script>
+					</td>
+					</td>
         </tr>
         <tr>
 				<tr>
@@ -133,7 +158,14 @@
 	      </tr>
 				<tr>
 						<td>SIM Gol</td>
-						<td><input type='text' name='sim_gol' class='form-control' required></td>
+						<td><select class="form-control" name="sim_gol">
+										<option>A</option>
+										<option>A Khusus</option>
+										<option>B1</option>
+										<option>B2</option>
+										<option>C</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>No DD</td>
@@ -141,11 +173,26 @@
 				</tr>
 				<tr>
 						<td>Jenis Kendaraan</td>
-						<td><input type='text' name='jns_kendaraan' class='form-control' required></td>
+						<td><select class="form-control" name="jns_kendaraan">
+										<option>Roda Dua</option>
+										<option>Roda Empat</option>
+										<option>Roda Enam</option>
+										<option>#</option>
+										<option>#</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Tanggal Tilang</td>
-						<td><input type='text' name='tgl_tilang' id = 'example2' class='form-control' required></td>
+						<td><input type='text' name='tgl_tilang' id = 'example4' class='form-control' required>
+							<script type="text/javascript">
+							$(document).ready(function () {
+									$('#example4').datepicker({
+										format: "dd/mm/yyyy"
+										});
+									});
+							</script>
+						</td>
 				</tr>
 				<tr>
 						<td>Jam Tilang</td>
@@ -161,27 +208,49 @@
 				</tr>
 				<tr>
 						<td>Surat Sita</td>
-						<td><input type='text' name='surat_sita' class='form-control' required></td>
+						<td><select class="form-control" name="surat_sita">
+										<option>SIM</option>
+										<option>STNK</option>
+										<option>KTP</option>
+										<option>Lain-Lain</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Pengambil Surat</td>
-						<td><input type='text' name='ambil_sitaan' class='form-control' required></td>
+						<td><select class="form-control" name="ambil_sitaan">
+										<option>Diwakilkan</option>
+										<option>Sendiri</option>
+								</select>
+						</td>
 				</tr>
 				<tr>
 						<td>Pasal Dilanggar</td>
 						<td><input type='text' name='pasal_dilanggar' class='form-control' required></td>
 				</tr>
+				<tr>
+						<td>Jml Denda</td>
+						<td><input type='text' name='jml_denda' class='form-control' required></td>
+				</tr>
+				<tr>
+						<td>Warna Kertas</td>
+						<td><select class="form-control" name="kertas" required>
+										<option>Merah</option>
+										<option>Biru</option>
+								</select>
+						</td>
+				</tr>
             <td colspan="2">
             		<button type="submit" class="btn btn-primary" name="btn-save">
     							<span class="glyphicon glyphicon-plus"></span> Create New Record
 								</button>
-            		<a href="index.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
+            		<a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; Back to index</a>
             </td>
         </tr>
+
     </table>
 	</form>
 </div>
-
-<?php include_once 'footer.php'; ?>
-</body>
+<?php include ('footer.php')?>
+</body>>
 </html>
