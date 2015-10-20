@@ -1,0 +1,193 @@
+<ScrollView
+    android:id="@+id/scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Surat Tilang Merah"
+            android:id="@+id/suratTilangMerah"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/kesatuan"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Kesatuan" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/namaTerdakwa"
+            android:layout_gravity="center_horizontal"
+            android:hint="Nama Terdakwa"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/alamatTerdakwa"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Alamat Terdakwa" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:id="@+id/noHp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="No Hp" />
+
+        <Spinner
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/pekerjaanTerdakwa"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_pekerjaan"
+            android:prompt="@string/pekerjaan_terdakwa"
+            android:spinnerMode="dialog" />
+
+        <Spinner
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/pendidikanTerdakwa"
+            android:entries="@array/array_pendidikan"
+            android:prompt="@string/pendidikan_terdakwa"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:spinnerMode="dialog" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/umurTerdakwa"
+            android:layout_gravity="center_horizontal"
+            android:hint="Umur Terdakwa"
+            android:layout_marginTop="10dp"
+            android:maxLength="3" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tempatLahir"
+            android:layout_gravity="center_horizontal"
+            android:hint="Tempat Lahir"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/tanggalLahir"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Tanggal Lahir"
+            android:onClick="onClick"
+            android:clickable="true"
+            android:editable="true"
+            android:focusableInTouchMode="true"
+            android:focusable="true" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/noKTP"
+            android:layout_gravity="center_horizontal"
+            android:hint="No KTP"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/golonganSIM"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Golongan SIM" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/noPlat"
+            android:layout_gravity="center_horizontal"
+            android:hint="Nomor Plat"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/jenisKendaraan"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_kendaraan"
+            android:prompt="@string/jenis_kendaraan"
+            android:spinnerMode="dialog" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/tanggalTilang"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Tanggal/Jam Tilang"
+            android:editable="false"
+            android:enabled="true"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:clickable="false" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/lokasiTilang"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:hint="Lokasi Penilangan" />
+
+        <EditText
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/wilayahHukum"
+            android:layout_gravity="center_horizontal"
+            android:hint="Wilayah Hukum"
+            android:layout_marginTop="10dp" />
+
+        <Spinner
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/suratDisita"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_suratDisita"
+            android:prompt="@string/jenis_suratDisita"
+            android:spinnerMode="dialog" />
+
+    </LinearLayout>
+</ScrollView>
