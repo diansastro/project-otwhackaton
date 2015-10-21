@@ -5,5 +5,41 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">Home</string>
+    <string name="title_activity_surat_tilang">SuratTilang</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="pekerjaan_terdakwa">Pekerjaan</string>
+    <string name="pendidikan_terdakwa">Pendidikan</string>
+    <string name="jenis_kendaraan">Jenis Kendaraan</string>
+    <string name="jenis_suratDisita">Surat Disita</string>
+    <string-array name="array_pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+        <item>S1</item>
+        <item>S2</item>
+    </string-array>
+    <string-array name="array_pekerjaan">
+        <item>Petani</item>
+        <item>Pedagang</item>
+        <item>Wiraswasta</item>
+        <item>Pegawai Swasta</item>
+        <item>Pegawai Negeri</item>
+    </string-array>
+    <string-array name="array_kendaraan">
+        <item>Roda 2</item>
+        <item>Roda 4</item>
+        <item>Roda 6 Ke atas</item>
+    </string-array>
+    <string-array name="array_suratDisita">
+        <item>SIM</item>
+        <item>STNK</item>
+        <item>STCK</item>
+        <item>RANMOR</item>
+    </string-array>
 
 </resources>
