@@ -44,10 +44,11 @@
 				$ssita 		 			 = $_POST['surat_sita'];
 				$ambsita 	 	 		 = $_POST['ambil_sitaan'];
 				$psllanggar 		 = $_POST['pasal_dilanggar'];
+				$denda			 		 = $_POST['jml_denda'];
 
-					if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
-													 $pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-													 $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar))
+				if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
+												$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+												$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda))
 							{
 									$msg = "<div class='alert alert-info'>
 													<strong>Selamat</strong> Data berhasil diupdate <a href='view.php'><strong>HOME</strong></a>!
@@ -66,7 +67,7 @@
 						extract($crud->getID($id));
 				}
 ?>
-	<?php include_once 'header.php'; ?>
+	<!--?php include_once 'header.php'; ?-->
 			<div class="clearfix"></div>
 			<div class="container">
 				<?php
@@ -97,16 +98,25 @@
 					</tr>
 					<tr>
 							<td>Pekerjaan</td>
-							<td><input type='text' name='pekerjaan' class='form-control' value="<?php echo $pekerjaan; ?>" required>
-									<!--input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Petani
-									<input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Pedagang
-									<input type='radio' value="<!?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> Wiraswasta
-									<input type='radio' value="<1?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"/> PNS-->
+							<td><!--input type='text' name='pekerjaan' class='form-control' value="<?php echo $pekerjaan; ?>" required-->
+									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Petani
+									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Pedagang
+									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Wiraswasta
+									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> PNS
 							</td>
 					</tr>
 					<tr>
 							<td>Pendidikan</td>
-							<td><input type='text' name='pendidikan' class='form-control' value="<?php echo $pendidikan; ?>" required></td>
+							<td><select class="form-control" name="pendidikan" value="<?php echo $pendidikan; ?>" required>
+											<option>SD</option>
+											<option>SMP</option>
+											<option>SMA</option>
+											<option>D3</option>
+											<option>S1</option>
+											<option>S2</option>
+											<option>S3</option>
+									</select>
+							</td>
 					</tr>
 					<tr>
 							<td>Umur</td>
@@ -126,7 +136,14 @@
 					</tr>
 					<tr>
 							<td>SIM Gol</td>
-							<td><input type='text' name='sim_gol' class='form-control' value="<?php echo $sim_gol; ?>" required></td>
+							<td><select class="form-control" name="sim_gol" value="<?php echo $sim_gol; ?>" required>
+											<option>A</option>
+											<option>A Khusus</option>
+											<option>B1</option>
+											<option>B2</option>
+											<option>C</option>
+									</select>
+							</td>
 					</tr>
 					<tr>
 							<td>No DD</td>
@@ -134,7 +151,14 @@
 					</tr>
 					<tr>
 							<td>Jenis Kendaraan</td>
-							<td><input type='text' name='jns_kendaraan' class='form-control' value="<?php echo $jns_kendaraan; ?>" required></td>
+							<td><select class="form-control" name="jns_kendaraan" value="<?php echo $jns_kendaraan; ?>" required>
+											<option>Roda Dua</option>
+											<option>Roda Empat</option>
+											<option>Roda Enam</option>
+											<option>#</option>
+											<option>#</option>
+									</select>
+							</td>
 					</tr>
 					<tr>
 							<td>Tanggal Tilang</td>
@@ -154,19 +178,33 @@
 					</tr>
 					<tr>
 							<td>Surat Sita</td>
-							<td><input type='text' name='surat_sita' class='form-control' value="<?php echo $surat_sita; ?>" required></td>
+							<td><select class="form-control" name="surat_sita" value="<?php echo $surat_sita; ?>" required>
+											<option>SIM</option>
+											<option>STNK</option>
+											<option>KTP</option>
+											<option>Lain-Lain</option>
+									</select>
+							</td>
 					</tr>
 					<tr>
 							<td>Pengambil Surat</td>
-							<td><input type='text' name='ambil_sitaan' class='form-control' value="<?php echo $ambil_sitaan; ?>" required></td>
+							<td><select class="form-control" name="ambil_sitaan" value="<?php echo $ambil_sitaan; ?>" required>
+											<option>Diwakilkan</option>
+											<option>Sendiri</option>
+									</select>
+							</td>
 					</tr>
 					<tr>
 							<td>Pasal Dilanggar</td>
 							<td><input type='text' name='pasal_dilanggar' class='form-control' value="<?php echo $pasal_dilanggar; ?>" required></td>
 					</tr>
+					<tr>
+							<td>Denda</td>
+							<td><input type='text' name='jml_denda' class='form-control' value="<?php echo $jml_denda; ?>" required></td>
+					</tr>
             	<td colspan="2">
                 <button type="submit" class="btn btn-primary" name="btn-update">
-    								<span class="glyphicon glyphicon-edit"></span>  Update Data
+    								<span class="glyphicon glyphicon-edit"></span> Update Data
 								</button>
                 <a href="view.php" class="btn btn-large btn-success"><i class="glyphicon glyphicon-backward"></i> &nbsp; BATAL</a>
             	</td>

@@ -62,8 +62,8 @@
 				}
 
 			public function update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
-														$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-														$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$foto,$denda,$petugas,$kertas)
+															$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+															$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda)
 				{
 					try
 					{
@@ -73,12 +73,10 @@
 																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
 																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar, foto=:foto,
-																														jml_denda=:denda, id_petugas=:petugas, kertas=:kertas WHERE id=:id ");
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar,
+																														jml_denda=:denda WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
-						$stmt->bindparam(":petugas",$petugas);
 						$stmt->bindparam(":ndakwa",$ndakwa);
-						$stmt->bindparam(":foto",$foto);
 						$stmt->bindparam(":almt",$almt);
 						$stmt->bindparam(":nhp",$nhp);
 						$stmt->bindparam(":pkrj",$pkrj);
@@ -99,7 +97,6 @@
 						$stmt->bindparam(":psllanggar",$psllanggar);
 						$stmt->bindparam(":id",$id);
 						$stmt->bindparam(":denda",$denda);
-						$stmt->bindparam(":kertas",$kertas);
 					  $stmt->execute();
 						return true;
 
@@ -118,65 +115,63 @@
 					$stmt->execute();
 					return true;
 				}
-
 	/* paging */
-
-		public function dataview($query)
-		{
-			$stmt = $this->db->prepare($query);
-			$stmt->execute();
-			if($stmt->rowCount()>0)
+			public function dataview($query)
 				{
-					while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+					$stmt = $this->db->prepare($query);
+					$stmt->execute();
+					if($stmt->rowCount()>0)
 						{
-							?>
-              <tr>
-                <td  class="active"> <?php print($row['id']); ?></td>
-                <td  class="success"><?php print($row['kesatuan']); ?></td>
-								<td	 class="info"> 	 <?php print($row['id_petugas']); ?></td>
-                <td  class="warning"><?php print($row['nama_dakwa']); ?></td>
-								<td	 class="active"> <?php print($row['foto']); ?></td>
-                <td  class="danger"> <?php print($row['alamat']); ?></td>
-                <td  class="info">	 <?php print($row['no_hp']); ?></td>
-								<td  class="active"> <?php print($row['pekerjaan']); ?></td>
-								<td  class="success"><?php print($row['pendidikan']); ?></td>
-								<td  class="warning"><?php print($row['umur']); ?></td>
-								<td	 class="danger"> <?php print($row['t_lahir']); ?></td>
-								<td	 class="info">	 <?php print($row['tgl_lahir']); ?></td>
-								<td  class="active"> <?php print($row['no_ktp']); ?></td>
-								<td	 class="success"><?php print($row['sim_gol']); ?></td>
-								<td	 class="warning"><?php print($row['no_dd']); ?></td>
-								<td	 class="danger"> <?php print($row['jns_kendaraan']); ?></td>
-								<td	 class="info">	 <?php print($row['tgl_tilang']); ?></td>
-								<td	 class="active"> <?php print($row['jam_tilang']); ?></td>
-								<td  class="success"><?php print($row['jalan']); ?></td>
-								<td	 class="warning"><?php print($row['wilayah']); ?></td>
-								<td	 class="danger"> <?php print($row['surat_sita']); ?></td>
-								<td	 class="info"> 	 <?php print($row['ambil_sitaan']); ?></td>
-								<td	 class="active"> <?php print($row['pasal_dilanggar']); ?></td>
-								<td	 class="success"><?php print($row['jml_denda']); ?></td>
-								<td	 class="warning"><?php print($row['kertas']); ?></td>
-                <td  class="success" align="center">
-                	<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="btn btn-primary">Edit</i></a>
-                </td>
-                <td class="warning" align="center">
-                	<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
-                </td>
-								<td class="info" align="center">
-									<a href="<?php ?>"><i class="btn btn-info">Print</i></a>
-								</td>
-            	</tr>
+							while($row=$stmt->fetch(PDO::FETCH_ASSOC))
+								{
+									?>
+              	<tr>
+                		<td  class="active"> <?php print($row['id']); ?></td>
+                		<td  class="success"><?php print($row['kesatuan']); ?></td>
+										<td	 class="info"> 	 <?php print($row['id_petugas']); ?></td>
+                		<td  class="warning"><?php print($row['nama_dakwa']); ?></td>
+										<td	 class="active"> <?php print($row['foto']); ?></td>
+                		<td  class="danger"> <?php print($row['alamat']); ?></td>
+                		<td  class="info">	 <?php print($row['no_hp']); ?></td>
+										<td  class="active"> <?php print($row['pekerjaan']); ?></td>
+										<td  class="success"><?php print($row['pendidikan']); ?></td>
+										<td  class="warning"><?php print($row['umur']); ?></td>
+										<td	 class="danger"> <?php print($row['t_lahir']); ?></td>
+										<td	 class="info">	 <?php print($row['tgl_lahir']); ?></td>
+										<td  class="active"> <?php print($row['no_ktp']); ?></td>
+										<td	 class="success"><?php print($row['sim_gol']); ?></td>
+										<td	 class="warning"><?php print($row['no_dd']); ?></td>
+										<td	 class="danger"> <?php print($row['jns_kendaraan']); ?></td>
+										<td	 class="info">	 <?php print($row['tgl_tilang']); ?></td>
+										<td	 class="active"> <?php print($row['jam_tilang']); ?></td>
+										<td  class="success"><?php print($row['jalan']); ?></td>
+										<td	 class="warning"><?php print($row['wilayah']); ?></td>
+										<td	 class="danger"> <?php print($row['surat_sita']); ?></td>
+										<td	 class="info"> 	 <?php print($row['ambil_sitaan']); ?></td>
+										<td	 class="active"> <?php print($row['pasal_dilanggar']); ?></td>
+										<td	 class="success"><?php print($row['jml_denda']); ?></td>
+										<td	 class="warning"><?php print($row['kertas']); ?></td>
+                		<td  class="danger" align="center">
+                				<a href="edit-data.php?edit_id=<?php print($row['id']); ?>"><i class="btn btn-primary">Edit</i></a>
+                		</td>
+                		<td class="info" align="center">
+                			<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
+                		</td>
+										<td class="active" align="center">
+											<a href="<?php ?>"><i class="btn btn-info">Print</i></a>
+										</td>
+            		</tr>
           			<?php
-						}
-				 }
-			 else
-			 	{
-					?>
-            	<tr>
-            	<td>Data tidak ditemukan...</td>
-            	</tr>
+							}
+				 	}
+			 		else
+			 			{
+							?>
+            		<tr>
+            			<td>Data tidak ditemukan...</td>
+            		</tr>
             	<?php
-				}
+						}
 			}
 
 			public function paging($query,$records_per_page)
