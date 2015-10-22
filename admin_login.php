@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <link type="text/css" rel="stylesheet" href="bootstrap/css/site.min.css">
     <title>Admin Login</title>
+    <?php include('header2.php'); ?>
 </head>
 <style>
     .login-panel {
@@ -20,12 +21,12 @@
                     <form role="form" method="post" action="admin_login.php">
                         <fieldset>
                             <div class="form-group"  >
-                                <input class="form-control" placeholder="Name" name="admin_name" type="text" autofocus>
+                                <input class="form-control" placeholder="Name" name="useradmin" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="admin_pass" type="password" value="">
+                                <input class="form-control" placeholder="Password" name="password_admin" type="password" value="">
                             </div>
-                              <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="admin_login" >
+                              <input class="btn btn-lg btn-success btn-block" type="submit" value="admin_login" name="admin_login" >
                         </fieldset>
                     </form>
                 </div>
@@ -40,16 +41,16 @@
     include('dbconfig2.php');
     if(isset($_POST['admin_login']))//this will tell us what to do if some data has been post through form with button.
     {
-      $admin_name=$_POST['admin_name'];
-      $admin_pass=$_POST['admin_pass'];
-      $admin_query="select * from admin where admin_name='$admin_name' AND admin_pass='$admin_pass'";
-      $run_query=mysqli_query($dbcon,$admin_query);
+      $useradmin      = $_POST['useradmin'];
+      $password_admin = $_POST['password_admin'];
+      $admin_query    = "SELECT * from admin where useradmin='$useradmin' AND password_admin='$password_admin'";
+      $run_query      = mysqli_query($dbcon,$admin_query);
         if(mysqli_num_rows($run_query)>0)
-          {
+            {
               echo "<script>window.open('view_users.php','_self')</script>";
-          }
+            }
         else
-        {
-          echo"<script>alert('Admin Details are incorrect..!')</script>";}
-        }
+          {
+            echo"<script>alert('Admin Details are incorrect..!')</script>";}
+          }
 ?>

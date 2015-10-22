@@ -36,29 +36,30 @@
     </div>
 </div>
 </body>
+<br></br>
 <?php include('footer.php'); ?>
 </html>
 <?php
-include ('dbconfig2.php');
-if(isset($_POST['register']))
-{
-    $user_id=$_POST['user_id'];//here getting result from the post array after submitting the form.
-    $password=$_POST['password'];//same
-      if($user_id=='')
-        {
-            //javascript use for input checking
-            echo"<script>alert('Please enter the name')</script>";
-            exit();//this use if first is not work then other will not show
-        }
+  include ('dbconfig2.php');
+  if(isset($_POST['register']))
+    {
+        $user_id=$_POST['user_id'];
+        $password=$_POST['password'];
+          if($user_id=='')
+              {
+                //javascript use for input checking
+                echo"<script>alert('Please enter the name')</script>";
+                exit();//this use if first is not work then other will not show
+              }
 
-        if($password=='')
-          {
-            echo"<script>alert('Please enter the password')</script>";
-            exit();
-          }
+          if($password=='')
+            {
+                echo"<script>alert('Please enter the password')</script>";
+                exit();
+            }
 
           //insert the user into the database.
-        $insert_user="INSERT INTO akun (user_id,password) VALUES ('$user_id','$password')";
+          $insert_user="INSERT INTO akun (user_id,password) VALUES ('$user_id','$password')";
           if(mysqli_query($dbcon,$insert_user))
             {
                 echo"<script>window.open('welcome.php','_self')</script>";

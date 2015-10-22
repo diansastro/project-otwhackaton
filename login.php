@@ -58,7 +58,7 @@
             }
           else
             {
-                echo "<script>alert('Username or password is incorrect!')</script>";
+                echo "<script>alert('Username atau Password Anda Salah!')</script>";
             }
       }
 ?>

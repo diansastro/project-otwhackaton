@@ -28,9 +28,6 @@
     						</button>
     							<a class="navbar-brand" href="index.php"><img src='images/logo.png' height="40"/></a>
     					</div>
-    					<div class="collapse navbar-collapse">
-    						
-    					</div>
     				</div>
     			</nav>
     		</div>
