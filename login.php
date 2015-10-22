@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="bootstrap/css/site.min.css">
     <title>Login</title>
 </head>
+<?php include('header2.php'); ?>
 <style>
     .login-panel {
         margin-top: 150px;
@@ -39,19 +40,20 @@
         </div>
     </div>
 </div>
+<?php include ('footer.php'); ?>
 </body>
 </html>
 <?php
-  include("dbconfig.php");
+  include('dbconfig2.php');
   if(isset($_POST['login']))
     {
         $user_id=$_POST['user_id'];
-        $user_pass=$_POST['password'];
-        $check_user="SELECT * from akun WHERE user_id='$user_id'AND password='$password'";
-        $run=mysqli_query($DB_con,$check_user);
+        $password=$_POST['password'];
+        $check_user="SELECT * from akun WHERE user_id='$user_id' AND password='$password' ";
+        $run=mysqli_query($dbcon,$check_user);
           if(mysqli_num_rows($run))
             {
-                echo "<script>window.open('welcome.php','_self')</script>";
+                echo "<script>window.open('view.php','_self')</script>";
                 $_SESSION['user_id']=$user_id;//here session is used and value of $user_email store in $_SESSION.
             }
           else

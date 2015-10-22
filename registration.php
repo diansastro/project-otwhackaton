@@ -4,6 +4,7 @@
     <link type="text/css" rel="stylesheet" href="bootstrap/css/site.min.css">
     <title>Registration</title>
 </head>
+<?php include('header2.php'); ?>
 <style>
     .login-panel {
         margin-top: 150px;
@@ -35,10 +36,10 @@
     </div>
 </div>
 </body>
+<?php include('footer.php'); ?>
 </html>
-
 <?php
-include ("dbconfig.php");
+include ('dbconfig2.php');
 if(isset($_POST['register']))
 {
     $user_id=$_POST['user_id'];//here getting result from the post array after submitting the form.
@@ -55,25 +56,12 @@ if(isset($_POST['register']))
             echo"<script>alert('Please enter the password')</script>";
             exit();
           }
-      /*  if($user_email=='')
-          {
-            echo"<script>alert('Please enter the email')</script>";
-            exit();
-          }
-//here query check weather if user already registered so can't register again.
-        /*$check_email_query="select * from users WHERE user_email='$user_email'";
-          $run_query=mysqli_query($dbcon,$check_email_query);
 
-            if(mysqli_num_rows($run_query)>0)
-                {
-                    echo "<script>alert('Email $user_email is already exist in our database, Please try another one!')</script>";
-                    exit();
-                } */
-//insert the user into the database.
+          //insert the user into the database.
         $insert_user="INSERT INTO akun (user_id,password) VALUES ('$user_id','$password')";
-        /*  if(mysqli_query($DB_con,$insert_user))
+          if(mysqli_query($dbcon,$insert_user))
             {
                 echo"<script>window.open('welcome.php','_self')</script>";
-            } */
+            }
   }
 ?>
