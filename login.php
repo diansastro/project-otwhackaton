@@ -40,6 +40,7 @@
         </div>
     </div>
 </div>
+<br></br>
 <?php include ('footer.php'); ?>
 </body>
 </html>
@@ -47,6 +48,7 @@
   include('dbconfig2.php');
   if(isset($_POST['login']))
     {
+        session_start();
         $user_id=$_POST['user_id'];
         $password=$_POST['password'];
         $check_user="SELECT * from akun WHERE user_id='$user_id' AND password='$password' ";
@@ -56,7 +58,7 @@
                 echo "<script>window.open('view.php','_self')</script>";
                 $_SESSION['user_id']=$user_id;//here session is used and value of $user_email store in $_SESSION.
             }
-          else
+            else
             {
                 echo "<script>alert('Username atau Password Anda Salah!')</script>";
             }

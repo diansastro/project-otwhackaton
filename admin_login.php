@@ -15,7 +15,7 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-success">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sign In</h3>
+                    <h3 class="panel-title">Administsator</h3>
                 </div>
                 <div class="panel-body">
                     <form role="form" method="post" action="admin_login.php">
@@ -34,6 +34,7 @@
         </div>
     </div>
 </div>
+<br></br>
 <?php include('footer.php'); ?>
 </body>
 </html>

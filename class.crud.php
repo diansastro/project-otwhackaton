@@ -63,7 +63,7 @@
 
 			public function update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
 											$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda,$kertas)
+											$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda)
 				{
 					try
 					{
@@ -74,7 +74,7 @@
 																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
 																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar,
-																														jml_denda=:denda kertas=:kertas WHERE id=:id ");
+																														jml_denda=:denda WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
 						$stmt->bindparam(":almt",$almt);
@@ -97,7 +97,7 @@
 						$stmt->bindparam(":psllanggar",$psllanggar);
 						$stmt->bindparam(":id",$id);
 						$stmt->bindparam(":denda",$denda);
-						$stmt->bindparam(":kertas",$kertas);
+
 					  $stmt->execute();
 						return true;
 

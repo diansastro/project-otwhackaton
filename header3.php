@@ -28,12 +28,13 @@
     						</button>
     							<a class="navbar-brand" href="index.php"><img src='images/logo.png' height="40"/></a>
     					</div>
-              <div class="collapase navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="nav-link current" href="index.php">Home</a></li>
-                    <li><a class="nav-link" href="#">About</a></li>
-                </ul>
-             </div>
+    					<div class="collapse navbar-collapse">
+    						<ul class="nav navbar-nav navbar-right">
+    								<li><a class="nav-link current" href="index.php">Home</a></li>
+    								<li><a class="nav-link" href="#">About</a></li>
+    								<li><a class="nav-link" href="logout.php">Logut</a></li>
+    						</ul>
+    					</div>
     				</div>
     			</nav>
     		</div>

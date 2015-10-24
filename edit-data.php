@@ -7,6 +7,7 @@
 	<script src="bootstrap/js/bootstrap-datepicker.min.js"></script>
 </head>
 <body>
+		<?php include_once 'header3.php'; ?>
 		<script type="text/javascript">
 				$(document).ready(function () {
 						$('#example1').datepicker({
@@ -20,6 +21,12 @@
 						});
 		</script>
 <?php
+	session_start();
+		if(!isset($_SESSION['user_id'])) {
+				header('Location:index.php');
+			}
+		?>
+<?php
 	include_once 'dbconfig.php';
 	if(isset($_POST['btn-update']))
 		{
@@ -28,7 +35,7 @@
 				$ndakwa 				 = $_POST['nama_dakwa'];
 				$almt		 				 = $_POST['alamat'];
 				$nhp 					 	 = $_POST['no_hp'];
-				$pkrj 			 	 	 = $_POST['pekerjaan'];
+				$pkrj					   = $_POST['pekerjaan'];
 				$pddkn 		 			 = $_POST['pendidikan'];
 				$umur 					 = $_POST['umur'];
 				$tlhr 				 	 = $_POST['t_lahir'];
@@ -47,13 +54,13 @@
 				$denda			 		 = $_POST['jml_denda'];
 
 				if($crud->update($id,$kes,$ndakwa,$almt,$nhp,$pkrj,
-												$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
-												$tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda))
-							{
+												 	$pddkn,$umur,$tlhr,$tglhr,$nktp,$simgol,$nodd,$jnskendara,
+												  $tgltilang,$jmtlg,$jln,$wil,$ssita,$ambsita,$psllanggar,$denda))
+								{
 									$msg = "<div class='alert alert-info'>
 													<strong>Selamat</strong> Data berhasil diupdate <a href='view.php'><strong>HOME</strong></a>!
 													</div>";
-							}
+								}
 							else
 								{
 										$msg = "<div class='alert alert-warning'>
@@ -67,7 +74,6 @@
 						extract($crud->getID($id));
 				}
 ?>
-	<!--?php include_once 'header.php'; ?-->
 			<div class="clearfix"></div>
 			<div class="container">
 				<?php
@@ -78,7 +84,7 @@
 			</div>
 			<div class="clearfix"></div><br />
 			<div class="container">
-     	<form method='post'>
+     		<form method='post'>
      			<table class='table'>
         		<tr>
             		<td>Kesatuan</td>
@@ -98,11 +104,13 @@
 					</tr>
 					<tr>
 							<td>Pekerjaan</td>
-							<td><!--input type='text' name='pekerjaan' class='form-control' value="<?php echo $pekerjaan; ?>" required-->
-									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Petani
-									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Pedagang
-									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> Wiraswasta
-									<input type='radio' value="<?php echo $pekerjaan; ?>" name='pekerjaan' id="pekerjaan"> PNS
+							<td><select class="form-control" name="pekerjaan" value="<?php echo $pekerjaan; ?>" required>
+											<option>Petani</option>
+											<option>Pedagang</option>
+											<option>Wirawasta</option>
+											<option>PNS</option>
+											<option>Pegawai Swasta</option>
+									</select>
 							</td>
 					</tr>
 					<tr>

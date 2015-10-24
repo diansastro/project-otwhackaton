@@ -1,3 +1,10 @@
+<?php
+	session_start();
+
+	if(!isset($_SESSION['user_id'])) {
+		header('Location:index.php');
+	}
+?>
 <html>
 	<head>
 			<title>Tambah Data </title>
@@ -48,7 +55,7 @@
 					}
 		}
 ?>
-<?php include('header.php'); ?>
+<?php include('header3.php'); ?>
 		<div class="clearfix"></div>
 <?php
 	if(isset($_GET['inserted']))
@@ -110,10 +117,13 @@
         </tr>
 				<tr>
             <td>Pekerjaan</td>
-            		<td><input type='radio' value="Petani" name='pekerjaan' id="pekerjaan" >Petani
-											<input type='radio' value="Pedagang" name='pekerjaan' id="pekerjaan">Pedagang
-											<input type='radio' value="Wiraswasta" name='pekerjaan' id="pekerjaan" >Wiraswasta
-											<input type='radio' value="PNS" name='pekerjaan' id="pekerjaan" >PNS
+            		<td><select class="form-control" name="pekerjaan">
+												<option>Petani</option>
+												<option>Pedagang</option>
+												<option>Wirawasta</option>
+												<option>PNS</option>
+												<option>Pegawai Swasta</option>
+										</select>
 								</td>
         </tr>
 				<tr>

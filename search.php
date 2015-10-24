@@ -1,3 +1,9 @@
+<?php
+session_start();
+	if(!isset($_SESSION['user_id'])) {
+		header('Location:index.php');
+	}
+ ?>
 <?php include_once 'dbconfig.php'; ?>
 <?php include('header.php'); ?>
 <br></br>

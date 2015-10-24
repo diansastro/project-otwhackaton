@@ -32,8 +32,7 @@
     						<ul class="nav navbar-nav navbar-right">
     								<li><a class="nav-link current" href="index.php">Home</a></li>
     								<li><a class="nav-link" href="#">About</a></li>
-    								<li><a class="nav-link" href="#">Login</a></li>
-                    <li><a class="nav-link" href="view.php">View</a></li>
+    								<li><a class="nav-link" href="login.php">Login</a></li>
     						</ul>
     					</div>
     				</div>

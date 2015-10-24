@@ -1,5 +1,24 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['user_id'])) {
+			header('Location:index.php');
+		}
+?>
+<!--?php
+
+	$timer=30;
+	if(time()-$_SESSION['timestamp']>$timer){
+		session_destroy();
+		session_unset();
+		}
+	else {
+		$_SESSION['timestamp']=time();
+	}
+		$_SESSION['timestamp']=time();
+?-->
 <?php include_once 'dbconfig.php'; ?>
-<?php include('header.php'); ?>
+<?php include ('header3.php');
+			include ('autologout.php'); ?>
 <br></br>
 		<div class="clearfix"></div>
 			<div class="container">
