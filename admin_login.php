@@ -21,7 +21,7 @@
                     <form role="form" method="post" action="admin_login.php">
                         <fieldset>
                             <div class="form-group"  >
-                                <input class="form-control" placeholder="Name" name="useradmin" type="text" autofocus>
+                                <input class="form-control" placeholder="Admin Id" name="useradmin" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password_admin" type="password" value="">

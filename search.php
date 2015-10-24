@@ -5,7 +5,7 @@ session_start();
 	}
  ?>
 <?php include_once 'dbconfig.php'; ?>
-<?php include('header.php'); ?>
+<?php include('header3.php'); ?>
 <br></br>
 			<div class="clearfix"></div></br>
 				<div class="container">
@@ -71,6 +71,10 @@ session_start();
 			</table>
 		</div>
 	</div>
+	<br>
+		<br></br>
+	</br>
+	<?php include('footer.php');  ?>
 		<?php
 			if(isset($_POST['cari'])){
 				/*session_start();
@@ -82,5 +86,20 @@ session_start();
 					}
 			}
 		 ?>
-<br></br>
-<?php include('footer.php');  ?>
+
+<script type="text/javascript">
+		var t;
+				window.onload=resetTimer;
+				document.onkeypress=resetTimer;
+		function logout()
+			{
+				alert("You are now logged out.")
+				location.href='login.php'
+			}
+		function resetTimer()
+			{
+				clearTimeout(t);
+				//t=setTimeout(logout,1800000) //logs out in 30 minutes
+				t=setTimeout(logout,60000) //logout in 1 minutes
+			}
+ </script>

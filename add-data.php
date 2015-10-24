@@ -235,7 +235,23 @@
 				</tr>
 				<tr>
 						<td>Pasal Dilanggar</td>
-						<td><input type='text' name='pasal_dilanggar' class='form-control' required></td>
+						<td><select class="form-control" name="pasal_dilanggar">
+										<option>Pasal 280</option>
+										<option>Pasal 281</option>
+										<option>Pasal 282</option>
+										<option>Pasal 283</option>
+										<option>Pasal 284</option>
+										<option>Pasal 285</option>
+										<option>Pasal 287</option>
+										<option>Pasal 288</option>
+										<option>Pasal 291</option>
+										<option>Pasal 293</option>
+										<option>Pasal 294</option>
+										<option>Pasal 295</option>
+										<option>Pasal 296</option>
+										<option>Pasal 310</option>
+										<option>Pasal 311</option>
+								</select></td>
 				</tr>
 				<tr>
 						<td>Jml Denda</td>

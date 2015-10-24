@@ -19,13 +19,13 @@
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Sign In</h3>
+                    <h3 class="panel-title">User Sign In</h3>
                 </div>
                 <div class="panel-body">
                     <form role="form" method="post" action="login.php">
                         <fieldset>
                             <div class="form-group"  >
-                                <input class="form-control" placeholder="Username" name="user_id" type="text" autofocus>
+                                <input class="form-control" placeholder="User Id" name="user_id" type="text" autofocus>
                             </div>
                             <div class="form-group">
                                 <input class="form-control" placeholder="Password" name="password" type="password" value="">

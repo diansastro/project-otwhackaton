@@ -67,14 +67,13 @@
 				{
 					try
 					{
-						$stmt=$this->db->prepare("UPDATE datatilang SET kesatuan=:kes, nama_dakwa=:ndakwa,
-																														alamat=:almt, no_hp=:nhp, pekerjaan=:pkrj,
-																														pendidikan=:pddkn, umur=:umur, t_lahir=:tlhr,
-																														tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
-																														no_dd=:nodd, jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
+						$stmt=$this->db->prepare("UPDATE datatilang SET kesatuan=:kes, nama_dakwa=:ndakwa, alamat=:almt,
+																														no_hp=:nhp, pekerjaan=:pkrj, pendidikan=:pddkn, umur=:umur,
+																														t_lahir=:tlhir, tgl_lahir=:tglhr, no_ktp=:nktp, sim_gol=:simgol,
+																														no_dd=:nodd,jns_kendaraan=:jnskendara, tgl_tilang=:tgltilang,
 																														jam_tilang=:jmtlg, jalan=:jln, wilayah=:wil, surat_sita=:ssita,
-																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar,
-																														jml_denda=:denda WHERE id=:id ");
+																														ambil_sitaan=:ambsita, pasal_dilanggar=:psllanggar, jml_denda=:denda
+																													  WHERE id=:id ");
 						$stmt->bindparam(":kes",$kes);
 						$stmt->bindparam(":ndakwa",$ndakwa);
 						$stmt->bindparam(":almt",$almt);
@@ -95,9 +94,8 @@
 			    	$stmt->bindparam(":ssita",$ssita);
 						$stmt->bindparam(":ambsita",$ambsita);
 						$stmt->bindparam(":psllanggar",$psllanggar);
-						$stmt->bindparam(":id",$id);
 						$stmt->bindparam(":denda",$denda);
-
+						$stmt->bindparam(":id",$id);
 					  $stmt->execute();
 						return true;
 
@@ -158,9 +156,9 @@
                 		<td class="info" align="center">
                 			<a href="delete.php?delete_id=<?php print($row['id']); ?>"><i class="btn btn-danger">Hapus</i></a>
                 		</td>
-										<td class="active" align="center">
-											<a href="<?php ?>"><i class="btn btn-info">Print</i></a>
-										</td>
+										<!--td class="active" align="center">
+											<a href="print.php?onClick=<?php print($row['id']); ?>"><i class="btn btn-info" name="onClick">Print</i></a>
+										</td-->
             		</tr>
           			<?php
 							}
