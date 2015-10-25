@@ -5,10 +5,9 @@ define('PASS','');
 define('DB','tilangonline');
  
 $con = mysqli_connect('localhost','root','','tilangonline');
-$username = $_POST['user'];
-$password = $_POST['pass'];
+$username = $_POST['hasilCode'];
  
-$sql = "select * from akun where user_id='$username' and password='$password'";
+$sql = "select * from datasim where id ='$username'";
  
 $res = mysqli_query($con,$sql);
  
@@ -16,6 +15,8 @@ $check = mysqli_fetch_array($res);
  
 if(isset($check)){
 echo 'success';
+
+	
 }else{
 echo 'failure';
 }

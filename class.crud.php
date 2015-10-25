@@ -129,7 +129,7 @@
                 		<td  class="success"><?php print($row['kesatuan']); ?></td>
 										<td	 class="info"> 	 <?php print($row['id_petugas']); ?></td>
                 		<td  class="warning"><?php print($row['nama_dakwa']); ?></td>
-										<td	 class="active"> <?php print($row['foto']); ?></td>
+										<?php echo "<td><img id='image_canv' width=90 src='".$row['foto']."' alt='NO IMAGE!!!'/></td>";?>
                 		<td  class="danger"> <?php print($row['alamat']); ?></td>
                 		<td  class="info">	 <?php print($row['no_hp']); ?></td>
 										<td  class="active"> <?php print($row['pekerjaan']); ?></td>

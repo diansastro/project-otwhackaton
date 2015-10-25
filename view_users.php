@@ -56,23 +56,21 @@
       </div>
         <br></br>
         <?php include('footer.php'); ?>
-
         <script type="text/javascript">
-         		var t;
-         				window.onload=resetTimer;
-         				document.onkeypress=resetTimer;
-         		function logout()
-         			{
-         				alert("You are now logged out.")
-         				location.href='admin_login.php'
-         			}
-         		function resetTimer()
-         			{
-         				clearTimeout(t);
-         				//t=setTimeout(logout,1800000) //logs out in 30 minutes
-        				t=setTimeout(logout,60000) //logout in 1 minutes
-         			}
-         </script>
-
+           		var t;
+           				window.onload=resetTimer;
+           				document.onkeypress=resetTimer;
+           		function logout()
+           			{
+           				alert("You are now logged out.")
+           				location.href='admin_login.php'
+           			}
+           		function resetTimer()
+           			{
+           				clearTimeout(t);
+           				//t=setTimeout(logout,1800000) //logs out in 30 minutes
+          				t=setTimeout(logout,300000) //logout in 1 minutes
+           			}
+           </script>
 </body>
 </html>
