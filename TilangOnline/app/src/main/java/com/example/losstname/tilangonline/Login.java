@@ -115,7 +115,7 @@ public class Login extends ActionBarActivity {
                 String s = result.trim();
                 loadingDialog.dismiss();
                 if(s.equalsIgnoreCase("success")){
-                    Intent intent = new Intent(Login.this, SuratTilang.class);
+                    Intent intent = new Intent(Login.this, MainActivity.class);
                     intent.putExtra(USER_NAME, editTextUserName.getText());
                     startActivity(intent);
                 }else {

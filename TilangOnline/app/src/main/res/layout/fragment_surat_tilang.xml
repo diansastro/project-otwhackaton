@@ -10,76 +10,90 @@
         android:orientation="vertical"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Surat Tilang Merah"
-            android:id="@+id/suratTilangMerah"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp" />
-
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/kesatuan"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:hint="Kesatuan" />
+            android:hint="Kesatuan"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/noKTP"
+            android:layout_gravity="center_horizontal"
+            android:hint="No KTP"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
+
+        <EditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/namaTerdakwa"
             android:layout_gravity="center_horizontal"
             android:hint="Nama Terdakwa"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
             android:id="@+id/alamatTerdakwa"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:hint="Alamat Terdakwa" />
+            android:hint="Alamat Terdakwa"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp" />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/noHp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:hint="No Hp" />
+            android:hint="No Hp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <Spinner
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pekerjaanTerdakwa"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:entries="@array/array_pekerjaan"
             android:prompt="@string/pekerjaan_terdakwa"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <Spinner
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pendidikanTerdakwa"
             android:entries="@array/array_pendidikan"
             android:prompt="@string/pendidikan_terdakwa"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
@@ -87,18 +101,22 @@
             android:layout_gravity="center_horizontal"
             android:hint="Umur Terdakwa"
             android:layout_marginTop="10dp"
-            android:maxLength="3" />
+            android:maxLength="3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tempatLahir"
             android:layout_gravity="center_horizontal"
             android:hint="Tempat Lahir"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
@@ -110,46 +128,45 @@
             android:clickable="true"
             android:editable="true"
             android:focusableInTouchMode="true"
-            android:focusable="true" />
+            android:focusable="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
+
 
         <EditText
-            android:layout_width="299dp"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/noKTP"
-            android:layout_gravity="center_horizontal"
-            android:hint="No KTP"
-            android:layout_marginTop="10dp" />
-
-        <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/golonganSIM"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:hint="Golongan SIM" />
+            android:hint="Golongan SIM"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/noPlat"
             android:layout_gravity="center_horizontal"
             android:hint="Nomor Plat"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <Spinner
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/jenisKendaraan"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:entries="@array/array_kendaraan"
             android:prompt="@string/jenis_kendaraan"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:ems="10"
@@ -161,33 +178,112 @@
             android:enabled="true"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:clickable="false" />
+            android:clickable="false"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lokasiTilang"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:hint="Lokasi Penilangan" />
+            android:hint="Lokasi Penilangan"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <EditText
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/wilayahHukum"
             android:layout_gravity="center_horizontal"
             android:hint="Wilayah Hukum"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"  />
 
         <Spinner
-            android:layout_width="299dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/suratDisita"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             android:entries="@array/array_suratDisita"
             android:prompt="@string/jenis_suratDisita"
-            android:spinnerMode="dialog" />
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sidang"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_sidang"
+            android:prompt="@string/sidang"
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/pasal"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_pasal"
+            android:prompt="@string/pasal"
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/denda"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:entries="@array/array_denda"
+            android:prompt="@string/denda"
+            android:spinnerMode="dialog"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambil Foto"
+            android:id="@+id/ambilFoto"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:onClick="imageOnClick"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:id="@+id/fotoTerdakwa"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:id="@+id/simpan"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:onClick="simpanOnClick"
+            android:layout_marginBottom="20dp" />
 
     </LinearLayout>
 </ScrollView>

@@ -1,28 +1,16 @@
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <link type="text/css" rel="stylesheet" href="bootstrap/css/site.min.css">
-    <title>View Users</title>
-    <?php include('header3.php'); ?>
-</head>
-<style>
-    .login-panel {
-        margin-top: 150px;
-      }
-    .table {
-        margin-top: 50px;
-      }
-</style>
-<body>
+<?php
+  session_start();
+  if(!isset($_SESSION['useradmin'])) {
+      header('Location:index.php');
+    }
+  include('header3.php');
+?>
 <div class="clearfix"></div>
-  <!--div class="container">
-    <a href="registration.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah User</a>
-  </div-->
     <div class="clearfix"></div>
     <div class="container">
       <div class="table-responsive">
           <h4 align="center">Data User</h4>
-          <a href="registration.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah User</a>
+          <a href="registration.php" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> &nbsp; Tamabah User</a><br></br>
           <div class="table-responsive"><!--this is used for responsive display in mobile and other devices-->
               <table class="table">
                       <tr class="table-bordered">
@@ -34,14 +22,11 @@
                       include("dbconfig2.php");
                           $view_users_query = "SELECT * from akun";//select query for viewing users.
                           $run              = mysqli_query($dbcon,$view_users_query);//here run the sql query.
-
                       while($row=mysqli_fetch_array($run))//while look to fetch the result and store in a array $row.
                         {
-
                             $user_id  = $row[0];
                             $password = $row[1];
-
-                            ?>
+                  ?>
                             <tr>
                                 <!--here showing results in the table -->
                                 <td class="danger"><?php echo $user_id;  ?></td>
@@ -72,5 +57,3 @@
           				t=setTimeout(logout,300000) //logout in 1 minutes
            			}
            </script>
-</body>
-</html>

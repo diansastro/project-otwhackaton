@@ -1,3 +1,9 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['useradmin'])) {
+    header('Location:index.php');
+  }
+?>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -43,6 +49,7 @@
   include ('dbconfig2.php');
   if(isset($_POST['register']))
     {
+        session_start();
         $user_id=$_POST['user_id'];
         $password=$_POST['password'];
           if($user_id=='')
@@ -62,7 +69,7 @@
           $insert_user="INSERT INTO akun (user_id,password) VALUES ('$user_id','$password')";
           if(mysqli_query($dbcon,$insert_user))
             {
-                echo"<script>window.open('welcome.php','_self')</script>";
+                echo"<script>window.open('view_users.php','_self')</script>";
             }
   }
 ?>

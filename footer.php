@@ -1,7 +1,5 @@
 <html>
 	<link rel="stylesheet" href="bootstrap/css/site.min.css">
-<div class="row">
-	<div class="col-md-12">
 		<div class="footer">
 						 <div class="container">
 							 <div class="clearfix">
@@ -30,6 +28,4 @@
 							 <div class="footer-copyright text-center">Copyright &copy; 2015 <a href="#">Code Of Daeng</a>. All rights reserved.</div>
 						 </div>
 					 </div>
-				 </div>
-			 </div>
 </html>

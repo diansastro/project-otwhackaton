@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">TilangOnline</string>
+    <string name="app_name">Tilang Online</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_home">Home</string>
     <string name="title_activity_surat_tilang">SuratTilang</string>
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
+    <string name="title_section1">Surat Tilang Biru</string>
+    <string name="title_section2">Surat Tilang Merah</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
@@ -16,6 +15,9 @@
     <string name="pendidikan_terdakwa">Pendidikan</string>
     <string name="jenis_kendaraan">Jenis Kendaraan</string>
     <string name="jenis_suratDisita">Surat Disita</string>
+    <string name="sidang">Sidang</string>
+    <string name="pasal">Melanggar Pasal</string>
+    <string name="denda">Jumlah Denda</string>
     <string-array name="array_pendidikan">
         <item>SD</item>
         <item>SMP</item>
@@ -41,5 +43,19 @@
         <item>STCK</item>
         <item>RANMOR</item>
     </string-array>
+    <string-array name="array_sidang">
+        <item>Sendiri</item>
+        <item>Diwakilkan</item>
+    </string-array>
+    <string-array name="array_pasal">
+        <item>Pasal ini Ayat itu</item>
+        <item>Passal itu Ayat ini</item>
+    </string-array>
+    <string-array name="array_denda">
+        <item>200000</item>
+        <item>250000</item>
+    </string-array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_barcode_scanner">BarcodeScanner</string>
 
 </resources>

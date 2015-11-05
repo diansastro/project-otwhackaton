@@ -4,31 +4,29 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:background="@drawable/ic_launcher" tools:context=".Home">
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:hint="No HP"
-        android:ems="10"
-        android:id="@+id/nmerhp"
-        android:layout_above="@+id/btnLogin"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="47dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="100dp" />
+    tools:context="com.example.losstname.tilangonline.MainActivity">
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Kirim"
-        android:id="@+id/btnKirim"
-        android:onClick="kirimButton"
-        android:layout_alignTop="@+id/nmerhp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="45dp" />
+        android:text="SIM Barcode Scan "
+        android:id="@+id/barcodeScanner"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:onClick="barcodeClick" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manual Input"
+        android:id="@+id/manualInput"
+        android:layout_marginTop="44dp"
+        android:layout_below="@+id/barcodeScanner"
+        android:layout_alignLeft="@+id/barcodeScanner"
+        android:layout_alignStart="@+id/barcodeScanner"
+        android:layout_marginRight="20dp"
+        android:onClick="manualClick"/>
 </RelativeLayout>

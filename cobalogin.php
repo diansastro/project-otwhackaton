@@ -1,10 +1,10 @@
 <?php
 define('HOST','localhost');
 define('USER','root');
-define('PASS','');
+define('PASS','root');
 define('DB','tilangonline');
  
-$con = mysqli_connect('localhost','root','','tilangonline');
+$con = mysqli_connect('localhost','root','root','tilangonline');
 $username = $_POST['user'];
 $password = $_POST['pass'];
  

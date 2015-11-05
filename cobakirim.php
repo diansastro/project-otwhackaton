@@ -13,7 +13,13 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM datatilang ORDER BY tgl_tilang ASC";
 $result = $conn->query($sql);
+$check = mysqli_fetch_array($res);
 
+if(isset($check)){
+echo 'success';
+}else{
+echo 'failure';
+}
 
 if ($result->num_rows > 0) {
     // output data of each row

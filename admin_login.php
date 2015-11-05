@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
@@ -42,6 +45,7 @@
     include('dbconfig2.php');
     if(isset($_POST['admin_login']))//this will tell us what to do if some data has been post through form with button.
     {
+      session_start();
       $useradmin      = $_POST['useradmin'];
       $password_admin = $_POST['password_admin'];
       $admin_query    = "SELECT * from admin where useradmin='$useradmin' AND password_admin='$password_admin'";
@@ -49,6 +53,7 @@
         if(mysqli_num_rows($run_query)>0)
             {
               echo "<script>window.open('view_users.php','_self')</script>";
+              $_SESSION['useradmin']=$useradmin;
             }
         else
           {
